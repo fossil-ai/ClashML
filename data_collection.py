@@ -7,20 +7,16 @@ This is the data collection module for obtaining data from Royale TV (this was d
 
 '''
 
-
-cardDict = {'Mortar': 44, 'X-Bow': 51, 'Poison': 54, 'Royal Giant': 11, 'Night Princess': 65, 'Ice Spirit': 7,
-            'Bomber': 9, 'Princess': 8, 'Clone': 59, 'Cannon': 49, 'Bomb Tower': 39, 'Rocket': 37, 'Bowler': 12,
-            'Lumberjack': 19, 'Prince': 5, 'Goblin Barrel': 46, 'Bats': 71, 'Ice Golem': 70, 'Inferno Dragon': 62,
-            'Musketeer': 33, 'Goblin Gang': 72, 'Log': 57, 'Tornado': 58, 'Dark Prince': 18, 'Spear Goblin': 23,
-            'Giant Skeletons': 26, 'Miner': 22, 'Hog Rider': 4, 'Minions': 27, 'Mirror': 53, 'Barbarian Hut': 35,
-            'Executioner': 69, 'Zap': 56, 'Skeleton Army': 14, 'Graveyard': 60, 'Giant Pekka': 24,
-            'Elite Barbarians': 73, 'Battle Ram': 45, 'P.E.K.K.A': 2, 'Sparky': 20, 'Barbarians': 6, 'Skeletons': 17,
-            'Lightning': 36, 'Freeze': 52, 'Dart Goblin': 68, 'Ice Wizard': 10, 'Fire Spirits': 21, 'Furnace': 50,
-            'Bandit': 64, 'Guards': 1, 'Baby Dragon': 3, 'Three Musketeers': 25, 'Elixer Collector': 38, 'Goblins': 29,
-            'Archer': 0, 'Electro Wizard': 63, 'Tombstone': 48, 'Wizard': 34, 'Fireball': 42, 'Tesla': 43, 'Balloon': 15,
-            'Valkyrie': 28, 'Lava Hound': 16, 'Minion Horde': 74, 'Rage': 55, 'Mega Minion': 67, 'Heal': 61,
-            'Inferno Tower': 40, 'Goblin Hut': 41, 'Witch': 31, 'Night Witch': 66, 'Golem': 32, 'Arrows': 47,
-            'Knight': 13}
+cardDict = {'mirror': 29, 'graveyard': 34, 'bombtower': 10, 'guards': 49, 'rage': 64, 'furnace': 47, 'barbarians': 40,
+            'elitebarbarians': 36, 'speargoblin': 24, 'minipekka': 38, 'icegolem': 17, 'valkyrie': 61, 'threemusk': 51, 'firespirits': 46,
+            'cannon': 9, 'frieball': 58, 'clone': 8, 'poison': 2, 'rocket': 11, 'skeletons': 41, 'battleram': 37, 'musketeer': 19,
+            'megaminion': 65, 'log': 21, 'hogrider': 27, 'collector': 52, 'heal': 66, 'knight': 73, 'bomber': 6, 'icespirit': 5,
+            'wizard': 57, 'nightprincess': 4, 'tombstone': 56, 'tornado': 22, 'executioner': 31, 'bandit': 48, 'infernotower': 67,
+            'icewizard': 45, 'archer': 54, 'balloon': 60, 'miner': 26, 'royalgiant': 3, 'golem': 71, 'darkprince': 23, 'mortar': 0,
+            'arrows': 72, 'bats': 16, 'nightwitch': 70, 'electrowizard': 55, 'witch': 69, 'giantpekka': 35, 'barbarianhut': 30,
+            'lightning': 42, 'zap': 32, 'minions': 28, 'minionhorde': 63, 'dartgoblin': 44, 'goblinhut': 68, 'infernodragon': 18,
+            'sparky': 39, 'tesla': 59, 'prince': 14, 'lavahound': 62, 'skeletonarmy': 33, 'babydragon': 50, 'goblinbarrel': 15,
+            'giantskeleton': 25, 'freeze': 43, 'lumberjack': 13, 'xbow': 1, 'bowler': 12, 'goblingang': 20, 'princess': 7, 'goblins': 53}
 
 ####### CREATE DATA ARRAY #######
 
@@ -28,15 +24,15 @@ data = [0] * 149
 
 ####### INPUT MANUAL DATA #######
 
-cards = input("Enter Player X's and Player Y's 8 cards (EACH), separate each card-name with DOUBLE whitespace '  ' and '?' for each player \n"
-              "Example: A  B  C  D  E  F  G  H?I  J  K  L  M  N  O  P\n")
+cardX = input("Enter Player X's 8 cards, separate each card-name with a whitespace ' '\n")
+cardY = input("Enter Player Y's 8 cards, separate each card-name with a whitespace ' '\n")
 winner_str = input("Enter 1 if Player X won, or Enter 0 if Player Y won\n")
 
 ####### PARSE INPUT STRINGS #######
 
-card_x = (cards.split("?"))[0].split("  ")
+card_x = cardX.split(" ")
 print(card_x)
-card_y = (cards.split("?"))[1].split("  ")
+card_y = cardY.split(" ")
 print(card_y)
 
 winner = int(winner_str)
