@@ -24,14 +24,12 @@ cardDict = {'Mortar': 44, 'X-Bow': 51, 'Poison': 54, 'Royal Giant': 11, 'Night P
 
 ####### CREATE DATA ARRAY #######
 
-data = [0] * 151
+data = [0] * 149
 
 ####### INPUT MANUAL DATA #######
 
 cards = input("Enter Player X's and Player Y's 8 cards (EACH), separate each card-name with DOUBLE whitespace '  ' and '?' for each player \n"
               "Example: A  B  C  D  E  F  G  H?I  J  K  L  M  N  O  P\n")
-wins = input("Enter number of total wins and three crown wins for X followed by Y, separate player entries with a '?'\n"
-             "Example: 435 123?546 234\n")
 winner_str = input("Enter 1 if Player X won, or Enter 0 if Player Y won\n")
 
 ####### PARSE INPUT STRINGS #######
@@ -40,14 +38,6 @@ card_x = (cards.split("?"))[0].split("  ")
 print(card_x)
 card_y = (cards.split("?"))[1].split("  ")
 print(card_y)
-
-win_x  = (wins.split("?"))[0].split(" ")
-win_y  = (wins.split("?"))[1].split(" ")
-
-x_skills = int(win_x[1])/int(win_x[0])
-print(x_skills)
-y_skills = int(win_y[1])/int(win_y[0])
-print(y_skills)
 
 winner = int(winner_str)
 
@@ -58,9 +48,7 @@ for x in card_x:
 for y in card_y:
 	data[cardDict[y] + 74] = 1
 
-data[148] = x_skills
-data[149] = y_skills
-data[150] = winner
+data[148] = winner
 
 file = open("data","a")
 file.write(str(data).strip('[]') + "\n")
