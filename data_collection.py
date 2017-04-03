@@ -1,5 +1,3 @@
-import numpy as np
-
 '''
 Faisal Mohammad
 
@@ -24,34 +22,54 @@ cardDict = {'Mortar': 44, 'X-Bow': 51, 'Poison': 54, 'Royal Giant': 11, 'Night P
             'Inferno Tower': 40, 'Goblin Hut': 41, 'Witch': 31, 'Night Witch': 66, 'Golem': 32, 'Arrows': 47,
             'Knight': 13}
 
-# CREATE PLAYER X ARRAY (74 entries for cards plus one for skills)
+####### CREATE DATA ARRAY #######
 
-x_cards = input("Enter Player X's 8 cards, separate each card-name with DOUBLE whitespace '  ' \n")
-x_wins = input("Enter number of total wins and three crown wins \n")
+data = [0] * 151
 
-x_cardlist = x_cards.split("  ")
-x_winlist = x_wins.split("  ")
+####### INPUT MANUAL DATA #######
 
-if(len(x_cardlist) != 8 or len(x_winlist) != 2):
-	raise ValueError('Enter ONLY 8 cards and ONLY 2 win numbers')
+cards = input("Enter Player X's and Player Y's 8 cards (EACH), separate each card-name with DOUBLE whitespace '  ' and '?' for each player \n"
+              "Example: A  B  C  D  E  F  G  H?I  J  K  L  M  N  O  P\n")
+wins = input("Enter number of total wins and three crown wins for X followed by Y, separate player entries with a '?'\n"
+             "Example: 435 123?546 234\n")
+winner_str = input("Enter 1 if Player X won, or Enter 0 if Player Y won\n")
 
-x_data = [0] * 75
-for cardName in x_cardlist:
-	x_data[cardDict[cardName]] = 1
-x_data[74] = int(x_wins[1])/int(x_wins[0])
+####### PARSE INPUT STRINGS #######
+
+card_x = (cards.split("?"))[0].split("  ")
+print(card_x)
+card_y = (cards.split("?"))[1].split("  ")
+print(card_y)
+
+win_x  = (wins.split("?"))[0].split(" ")
+win_y  = (wins.split("?"))[1].split(" ")
+
+x_skills = int(win_x[1])/int(win_x[0])
+print(x_skills)
+y_skills = int(win_y[1])/int(win_y[0])
+print(y_skills)
+
+winner = int(winner_str)
+
+####### INSERT INTO DATA ARRAY#######
+
+for x in card_x:
+	data[cardDict[x]] = 1
+for y in card_y:
+	data[cardDict[y] + 74] = 1
+
+data[148] = x_skills
+data[149] = y_skills
+data[150] = winner
+
+file = open("data","a")
+file.write(str(data).strip('[]') + "\n")
+file.close()
 
 
-y_cards = input("Enter Player X's 8 cards, separate each card-name with DOUBLE whitespace '  ' \n")
-y_wins = input("Enter number of total wins and three crown wins with DOUBLE whitespaces '  '\n")
-y_cardlist = y_cards.split("  ")
-y_winlist = y_wins.split("  ")
 
-if(len(y_cardlist) != 8 or len(y_winlist) != 2):
-	raise ValueError('Enter ONLY 8 cards and ONLY 2 win numbers')
 
-y_data = [0] * 75
-for cardName in y_cardlist:
-	y_data[cardDict[cardName]] = 1
-y_data[74] = int(y_wins[1])/int(y_wins[0])
+
+
 
 
