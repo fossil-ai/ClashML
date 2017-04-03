@@ -1,3 +1,5 @@
+import numpy as np
+
 '''
 Faisal Mohammad
 
@@ -19,6 +21,37 @@ cardDict = {'Mortar': 44, 'X-Bow': 51, 'Poison': 54, 'Royal Giant': 11, 'Night P
             'Bandit': 64, 'Guards': 1, 'Baby Dragon': 3, 'Three Musketeers': 25, 'Elixer Collector': 38, 'Goblins': 29,
             'Archer': 0, 'Electro Wizard': 63, 'Tombstone': 48, 'Wizard': 34, 'Fireball': 42, 'Tesla': 43, 'Balloon': 15,
             'Valkyrie': 28, 'Lava Hound': 16, 'Minion Horde': 74, 'Rage': 55, 'Mega Minion': 67, 'Heal': 61,
-            'Inferno Tower': 40, 'Goblin Hut': 41, 'Witch': 31, 'Night Witch': 66, 'Golem ': 32, 'Arrows': 47,
+            'Inferno Tower': 40, 'Goblin Hut': 41, 'Witch': 31, 'Night Witch': 66, 'Golem': 32, 'Arrows': 47,
             'Knight': 13}
+
+# CREATE PLAYER X ARRAY (74 entries for cards plus one for skills)
+
+x_cards = input("Enter Player X's 8 cards, separate each card-name with DOUBLE whitespace '  ' \n")
+x_wins = input("Enter number of total wins and three crown wins \n")
+
+x_cardlist = x_cards.split("  ")
+x_winlist = x_wins.split("  ")
+
+if(len(x_cardlist) != 8 or len(x_winlist) != 2):
+	raise ValueError('Enter ONLY 8 cards and ONLY 2 win numbers')
+
+x_data = [0] * 75
+for cardName in x_cardlist:
+	x_data[cardDict[cardName]] = 1
+x_data[74] = int(x_wins[1])/int(x_wins[0])
+
+
+y_cards = input("Enter Player X's 8 cards, separate each card-name with DOUBLE whitespace '  ' \n")
+y_wins = input("Enter number of total wins and three crown wins with DOUBLE whitespaces '  '\n")
+y_cardlist = y_cards.split("  ")
+y_winlist = y_wins.split("  ")
+
+if(len(y_cardlist) != 8 or len(y_winlist) != 2):
+	raise ValueError('Enter ONLY 8 cards and ONLY 2 win numbers')
+
+y_data = [0] * 75
+for cardName in y_cardlist:
+	y_data[cardDict[cardName]] = 1
+y_data[74] = int(y_wins[1])/int(y_wins[0])
+
 
