@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6576ad4c-a4a4-4ef8-92ef-e4763ecfb09e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_collection.py" afterPath="$PROJECT_DIR$/data_collection.py" />
     </list>
     <ignored path="ClashDeepNN.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -298,7 +297,14 @@
       <option name="project" value="LOCAL" />
       <updated>1491202418895</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added input mechanism for data">
+      <created>1491205082605</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1491205082605</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -339,7 +345,8 @@
     <MESSAGE value="added description" />
     <MESSAGE value="created card dictionary for indexing" />
     <MESSAGE value="Completed Card List" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed Card List" />
+    <MESSAGE value="Added input mechanism for data" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added input mechanism for data" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
