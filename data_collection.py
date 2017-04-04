@@ -43,7 +43,7 @@ winner = int(winner_str)
 for x in card_x:
 	data[cardDict[x]] = 1
 for y in card_y:
-	data[cardDict[y] + 74] = 1
+	data[cardDict[y] + 75] = 1
 
 data[150] = winner
 
