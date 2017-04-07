@@ -51,14 +51,14 @@ X = [PLAYER 1 ATTRIBUTES, PLAYER 2 ATTRIBUTES, WINNER] - Size of sample data is:
 
 cardDict = {
     'mirror': 29, 'graveyard': 34, 'bombtower': 10, 'guards': 49, 'rage': 64, 'furnace': 47, 'barbarians': 40,
-    'elitebarbarians': 36, 'speargoblin': 24, 'minipekka': 38, 'icegolem': 17, 'valkyrie': 61, 'threemusk': 51,
+    'elitebarbarians': 36, 'speargoblins': 24, 'minipekka': 38, 'icegolem': 17, 'valkyrie': 61, 'threemusk': 51,
     'firespirits': 46,
     'cannon': 9, 'fireball': 58, 'clone': 8, 'poison': 2, 'rocket': 11, 'skeletons': 41, 'battleram': 37,
     'musketeer': 19,
     'megaminion': 65, 'log': 21, 'hogrider': 27, 'collector': 52, 'heal': 66, 'knight': 73, 'bomber': 6,
     'icespirit': 5,
     'wizard': 57, 'tombstone': 56, 'tornado': 22, 'executioner': 31, 'bandit': 48, 'infernotower': 67,
-    'icewizard': 45, 'archer': 54, 'balloon': 60, 'miner': 26, 'royalgiant': 3, 'golem': 71, 'darkprince': 23,
+    'icewizard': 45, 'archers': 54, 'balloon': 60, 'miner': 26, 'royalgiant': 3, 'golem': 71, 'darkprince': 23,
     'mortar': 0,
     'arrows': 72, 'bats': 16, 'nightwitch': 70, 'electrowizard': 55, 'witch': 69, 'giantpekka': 35,
     'barbarianhut': 30,
@@ -71,7 +71,7 @@ cardDict = {
     'giant': 4}
 
 cardAttrDict = {
-    'archer': [1, 4, 9, 11],'arrows': [5, 7, 9, 11],
+    'archers': [1, 4, 9, 11],'arrows': [5, 7, 9, 11],
     'babydragon': [0, 3, 7, 9, 11],'balloon': [0, 2, 3, 7, 10, 12],'bandit': [2, 1, 4, 9, 15], 'barbarianhut': [14, 10, 4, 1, 13],
     'barbarians': [1, 4, 10, 14],'bats': [8, 3, 14, 11, 1],'battleram': [1, 2, 4, 9, 12],'bomber': [9, 7, 4],
     'bombtower': [0, 7, 10, 13],'bowler': [0, 7, 4, 10],'cannon': [0, 1, 9, 13],'clone': [14, 9, 15],'collector': [13, 10],
@@ -95,16 +95,30 @@ data = [0] * 149  # this is for brute_data.txt
 attr_data = [0] * 33  # this is for attr_data
 
 ####### INPUT MANUAL DATA #######
+card_x = []
+card_y = []
+i = 0
+while i < 8:
+    entry = input("Enter the %d card for Player X. \n" % i)
+    while entry not in cardAttrDict.keys():
+        print("Bitch type that in correctly!")
+        entry = input("Enter the %d card for Player X. \n" % i)
+    card_x.append(entry)
+    i += 1
+i = 0
+while i < 8:
+    entry = input("Enter the %d card for Player Y. \n" % i)
+    while entry not in cardAttrDict.keys():
+        print("Bitch type that in correctly!")
+        entry = input("Enter the %d card for Player Y. \n" % i)
+    card_y.append(entry)
+    i += 1
 
-cardX = input("Enter Player X's 8 cards, separate each card-name with a whitespace ' '\n")
-cardY = input("Enter Player Y's 8 cards, separate each card-name with a whitespace ' '\n")
 winner_str = input("Enter 1 if Player X won, or Enter -1 if Player Y won - 0 for draw\n")
 
 ####### PARSE INPUT STRINGS #######
 
-card_x = cardX.split(" ")
 print(card_x)
-card_y = cardY.split(" ")
 print(card_y)
 winner = int(winner_str)
 
