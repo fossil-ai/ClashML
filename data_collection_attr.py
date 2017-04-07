@@ -98,7 +98,7 @@ attr_data = [0] * 33  # this is for attr_data
 
 cardX = input("Enter Player X's 8 cards, separate each card-name with a whitespace ' '\n")
 cardY = input("Enter Player Y's 8 cards, separate each card-name with a whitespace ' '\n")
-winner_str = input("Enter 1 if Player X won, or Enter 0 if Player Y won\n")
+winner_str = input("Enter 1 if Player X won, or Enter -1 if Player Y won - 0 for draw\n")
 
 ####### PARSE INPUT STRINGS #######
 
@@ -146,3 +146,6 @@ file.close()
 # Enter 1 if Player X won, or Enter 0 if Player Y won                     #
 # 1                                                                       #
 ###########################################################################
+# minionhorde icespirit miner knight threemusk log skeletons collector
+# Enter Player Y's 8 cards, separate each card-name with a whitespace ' '
+# graveyard megaminion knight tornado skeletons dragon poison bowler

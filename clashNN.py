@@ -1,11 +1,5 @@
-import matplotlib
-import matplotlib.pyplot as plt
-import matplotlib.cm as cm
-import os
-import gzip
 import numpy as np
 import scipy as sp
-import theano
 import lasagne
 from lasagne import layers
 from lasagne.updates import nesterov_momentum
@@ -42,7 +36,7 @@ net1 = NeuralNet(
     dropout2_p=0.5,
     # output
     output_nonlinearity=lasagne.nonlinearities.softmax,
-    output_num_units=2,
+    output_num_units=3,
     # optimization method params
     update=nesterov_momentum,
     update_learning_rate=0.01,
