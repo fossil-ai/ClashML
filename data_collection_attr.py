@@ -114,7 +114,7 @@ while i < 8:
     card_y.append(entry)
     i += 1
 
-winner_str = input("Enter 1 if Player X won, or Enter -1 if Player Y won - 0 for draw\n")
+winner_str = input("Enter 1 if Player X won, or Enter 0 if Player Y won\n")
 
 ####### PARSE INPUT STRINGS #######
 
@@ -160,6 +160,5 @@ file.close()
 # Enter 1 if Player X won, or Enter 0 if Player Y won                     #
 # 1                                                                       #
 ###########################################################################
-# minionhorde icespirit miner knight threemusk log skeletons collector
-# Enter Player Y's 8 cards, separate each card-name with a whitespace ' '
-# graveyard megaminion knight tornado skeletons dragon poison bowler
+
+

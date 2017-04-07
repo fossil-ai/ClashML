@@ -36,16 +36,23 @@ net1 = NeuralNet(
     dropout2_p=0.5,
     # output
     output_nonlinearity=lasagne.nonlinearities.softmax,
-    output_num_units=3,
+    output_num_units=2,
     # optimization method params
     update=nesterov_momentum,
-    update_learning_rate=0.01,
+    update_learning_rate=0.001,
     update_momentum=0.9,
-    max_epochs=10,
+    max_epochs=500,
     verbose=1,
     )
 # Train the network
 nn = net1.fit(X_train, Y_train)
 
 preds = net1.predict(X_train)
-print(preds)
+
+score = 0
+for x,y in zip(preds,Y_train):
+	print(x,y)
+	if x == y:
+		score+=1
+
+print(score/len(Y_train))
