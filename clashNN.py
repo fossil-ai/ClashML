@@ -9,6 +9,7 @@ X_samples_shape = (1,32)
 
 def load_dataset():
 	data = np.loadtxt('attr_data', delimiter=',')
+	np.random.shuffle(data)
 	half = int((data.shape[0]) / 2)
 	Y_train = data[:half,data.shape[1] - 1]
 	Y_test = data[half :, data.shape[1] - 1]
@@ -33,20 +34,20 @@ net1 = NeuralNet(
     # input layer
     input_shape=(None, 1, X_samples_shape[1]),
     # dropout1
-    dropout1_p=0.75,
+    dropout1_p=0.25,
     # dense
-    dense_num_units=256,
+    dense_num_units=128,
     dense_nonlinearity=lasagne.nonlinearities.rectify,
     # dropout2
-    dropout2_p=0.75,
+    dropout2_p=0.25,
     # output
     output_nonlinearity=lasagne.nonlinearities.softmax,
     output_num_units=2,
     # optimization method params
     update=nesterov_momentum,
-    update_learning_rate=0.001,
+    update_learning_rate=0.005,
     update_momentum=0.9,
-    max_epochs=250,
+    max_epochs=500,
     verbose=1,
     )
 # Train the network
@@ -57,8 +58,9 @@ print("CHECK AGAINST TRAINING DATA")
 preds = net1.predict(X_train)
 
 score = 0
-for x,y in zip(preds,Y_train):
-	print(x,y)
+print("TR || P")
+for x,y in zip(Y_train, preds):
+	print(str(x) + "  " + str(y))
 	if x == y:
 		score+=1
 
@@ -69,8 +71,9 @@ print("CHECK AGAINST TEST DATA")
 preds = net1.predict(X_test)
 
 score = 0
-for x,y in zip(preds,Y_test):
-	print(x,y)
+print("TS || P")
+for x,y in zip(Y_test,preds):
+	print(str(x) + "  " + str(y))
 	if x == y:
 		score+=1
 
