@@ -6,80 +6,104 @@ from lasagne.updates import nesterov_momentum
 from nolearn.lasagne import NeuralNet
 
 X_samples_shape = (1,32)
+trials = 100
+accuracy_train = 0
+accuracy_test = 0
 
 def load_dataset():
 	data = np.loadtxt('attr_data', delimiter=',')
 	np.random.shuffle(data)
-	train_perc = 90
+	train_perc = 80
 	half = int((data.shape[0]) * (train_perc/100))
+
+	# LABEL DATA
 	Y_train = data[:half,data.shape[1] - 1]
+	Y_train_1 = [0] * half
+	for i in range(half):
+		Y_train_1[i] = (~ int(np.asscalar(Y_train[i]))) + 2
+	Y_train = np.concatenate((Y_train,Y_train_1), axis= 0)
 	Y_test = data[half :, data.shape[1] - 1]
+
+	# SAMPLE DATA
 	X_data = sp.delete(data, data.shape[1] - 1, axis=1)
 	X_train = X_data[:half]
+	X_train_1 = np.copy(X_train)
+	for i in X_train_1:
+		temp = np.copy(i[:16])
+		i[:16] = np.copy(i[16:])
+		i[16:] = temp
+	X_train = np.concatenate((X_train,X_train_1),axis=0)
 	X_test = X_data[half:]
+
+	#RESHAPE FOR NN ENTRY
 	X_train = X_train.reshape(-1,X_samples_shape[0],X_samples_shape[1])
 	X_test = X_test.reshape(-1, X_samples_shape[0], X_samples_shape[1])
 	Y_train = Y_train.astype(np.uint8)
 	Y_test = Y_test.astype(np.uint8)
 	return X_train, Y_train, X_test, Y_test
 
-net1 = NeuralNet(
-    layers=[('input', layers.InputLayer),
-            ('dropout1', layers.DropoutLayer),
-            ('dense', layers.DenseLayer),
-            ('dropout2', layers.DropoutLayer),
-            ('output', layers.DenseLayer),
-            ],
-    # input layer
-    input_shape=(None, 1, X_samples_shape[1]),
-    # dropout1
-    dropout1_p=0.25,
-    # dense
-    dense_num_units=256,
-    dense_nonlinearity=lasagne.nonlinearities.rectify,
-    # dropout2
-    dropout2_p=0.5,
-    # output
-    output_nonlinearity=lasagne.nonlinearities.softmax,
-    output_num_units=2,
-    # optimization method params
-    update=nesterov_momentum,
-    update_learning_rate=0.01,
-    update_momentum=0.9,
-    max_epochs=256,
-    verbose=1,
-    )
 
+for i in range(trials):
 
-X_train, Y_train, X_test, Y_test = load_dataset()
-# Train the network
-nn = net1.fit(X_train, Y_train)
+	net1 = NeuralNet(
+		layers=[('input', layers.InputLayer),
+		        ('dense', layers.DenseLayer),
+		        ('dropout2', layers.DropoutLayer),
+		        ('output', layers.DenseLayer),
+		        ],
+		# input layer
+		input_shape=(None, 1, X_samples_shape[1]),
+		# dense
+		dense_num_units=64,
+		dense_nonlinearity=lasagne.nonlinearities.rectify,
+		# dropout2
+		dropout2_p=0.5,
+		# output
+		output_nonlinearity=lasagne.nonlinearities.softmax,
+		output_num_units=2,
+		# optimization method params
+		update=nesterov_momentum,
+		update_learning_rate=0.05,
+		update_momentum=0.9,
+		max_epochs=100,
+	)
 
-print("CHECK AGAINST TRAINING DATA")
+	print('--------- Trial #{} ------------'.format(i))
 
-preds = net1.predict(X_train)
+	X_train, Y_train, X_test, Y_test = load_dataset()
+	# Train the network
+	nn = net1.fit(X_train, Y_train)
 
-score = 0
-print("TR || P")
-for x,y in zip(Y_train, preds):
-	print(str(x) + "  " + str(y))
-	if x == y:
-		score+=1
+	print("TRAINING DATA ACCURACY")
 
-print(score/len(Y_train))
+	preds = net1.predict(X_train)
 
-print("CHECK AGAINST TEST DATA")
+	score = 0
+	#print("TR || P")
+	for x,y in zip(Y_train, preds):
+		#print(str(x) + "  " + str(y))
+		if x == y:
+			score+=1
 
-preds = net1.predict(X_test)
-prob = net1.predict_proba(X_test)
+	accuracy_tr = score/len(Y_train)
+	accuracy_train += accuracy_tr
+	print('{} % \n'.format(accuracy_tr*100))
 
-score = 0
-print("TS || P")
-for x,y in zip(Y_test,preds):
-	print(str(x) + "  " + str(y))
-	if x == y:
-		score+=1
+	print("TEST DATA ACCURACY")
 
-print(score/len(Y_test))
+	preds = net1.predict(X_test)
 
-print(prob)
+	score = 0
+	#print("TS || P")
+	for x,y in zip(Y_test,preds):
+		#print(str(x) + "  " + str(y))
+		if x == y:
+			score+=1
+
+	accuracy_ts = score / len(Y_test)
+	accuracy_test += accuracy_ts
+	print('{} %'.format(accuracy_ts*100))
+	print('-------------------------------- \n')
+
+print('TRAINING ACCURACY IS: {} %'.format(str(100 *accuracy_train/trials)))
+print('TEST ACCURACY IS: {} %'.format(str(100* accuracy_test/trials)))
