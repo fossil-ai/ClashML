@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6576ad4c-a4a4-4ef8-92ef-e4763ecfb09e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/clash_RF.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/update_data_scheme.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test_attr_data" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/attr_data" afterPath="$PROJECT_DIR$/attr_data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/brute_data" afterPath="$PROJECT_DIR$/brute_data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clashNN.py" afterPath="$PROJECT_DIR$/clashNN.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clash_SVM.py" afterPath="$PROJECT_DIR$/clash_SVM.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_collection_attr.py" afterPath="$PROJECT_DIR$/data_collection_attr.py" />
     </list>
     <ignored path="ClashDeepNN.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,11 +33,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_attr_data" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test_attr_data" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test_attr_data">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="195">
+              <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pre_data_gen_script.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pre_data_gen_script.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -59,7 +63,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="update_data_scheme.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="update_data_scheme.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/update_data_scheme.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-1129">
@@ -598,7 +602,14 @@
       <option name="project" value="LOCAL" />
       <updated>1492720326393</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="added couple new scripts for easy edits">
+      <created>1492851708570</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1492851708570</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -652,7 +663,8 @@
     <MESSAGE value="more datat points" />
     <MESSAGE value="fixed data points" />
     <MESSAGE value="fixed some bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed some bugs" />
+    <MESSAGE value="added couple new scripts for easy edits" />
+    <option name="LAST_COMMIT_MESSAGE" value="added couple new scripts for easy edits" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -697,6 +709,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
           <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#18#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -734,6 +749,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -836,13 +854,6 @@
     <entry file="file://$PROJECT_DIR$/customwidget.kv" />
     <entry file="file://$PROJECT_DIR$/images.jpeg" />
     <entry file="file://$PROJECT_DIR$/clashSVM.py" />
-    <entry file="file://$PROJECT_DIR$/pre_data_gen_script.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sklearn/svm/base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="86">
@@ -862,6 +873,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1032">
           <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#18#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -915,18 +929,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_attr_data">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/update_data_scheme.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1129">
           <caret line="0" column="129" selection-start-line="0" selection-start-column="129" selection-end-line="0" selection-end-column="129" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pre_data_gen_script.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_attr_data">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
           <folding />
         </state>
       </provider>
