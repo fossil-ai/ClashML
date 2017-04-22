@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from sklearn import svm
 
 X_samples_shape = (1,32)
-trials = 100
+trials = 250
 accuracy_train = 0
 accuracy_test = 0
 
@@ -13,7 +13,7 @@ accuracy_test = 0
 def load_dataset():
 	data = np.loadtxt('attr_data', delimiter=',')
 	np.random.shuffle(data)
-	train_perc = 85
+	train_perc = 99
 	half = int((data.shape[0]) * (train_perc / 100))
 
 	# LABEL DATA

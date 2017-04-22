@@ -6,14 +6,14 @@ from lasagne.updates import nesterov_momentum
 from nolearn.lasagne import NeuralNet
 
 X_samples_shape = (1,32)
-trials = 100
+trials = 25
 accuracy_train = 0
 accuracy_test = 0
 
 def load_dataset():
 	data = np.loadtxt('attr_data', delimiter=',')
 	np.random.shuffle(data)
-	train_perc = 80
+	train_perc = 99
 	half = int((data.shape[0]) * (train_perc/100))
 
 	# LABEL DATA
@@ -63,7 +63,7 @@ for i in range(trials):
 		output_num_units=2,
 		# optimization method params
 		update=nesterov_momentum,
-		update_learning_rate=0.05,
+		update_learning_rate=0.025,
 		update_momentum=0.9,
 		max_epochs=100,
 	)
