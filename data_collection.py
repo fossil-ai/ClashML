@@ -1,4 +1,72 @@
-# ONLY USE WHEN NEW ATTRIBUTES ARE ADDED AND REMOVED - DO NOT WRITE ON brute_data.txt, that is pure data and cannot be recovered.
+'''
+Faisal Mohammad
+
+Version 0.0
+
+This is the data collection module for obtaining data from Royale TV (this was done manually).
+The data retrieved regarding both players' cards and the outcome is used to create the sample data for analysis
+via grouping cards to attribute groups ('features' ).
+
+ATTRIBUTES VERSION 2 :
+
+0) TOTAL-HEALTH     - Total hit points of each card
+1) ELIXER-COST      - Average elixer cost of deck
+2) TOTAL-ADPS       - Total attack damage per second
+3) BUILDINGS        - # of building cards
+4) SPLASH           - # of splash damage cards
+5) STUNNERS         - # of cards with a stun/freeze effect
+6) TRICKY           - # of cards with unique perks (princess, miner, clone)
+7) MULTI            - # of multi-spawn cards
+8) AIR-DAMAGE       - # of cards who can attack air troops
+9) BUILDING-BUSTERS - # of cards who attack only building cards
+10) DAMAGE-SPELLS   - # of card spells that cause damage
+
+SAMPLE DATA WILL BE STRUCTURED AS FOLLOWS:
+
+X = [PLAYER 1 ATTRIBUTES, PLAYER 2 ATTRIBUTES, WINNER] - Size of sample data is: N = (2 * # of Attributes) + 1
+
+ATTRIBUTES VERSION 1:
+
+0) DEFENSE - High health
+
+1) BRAWLERS - Cards that attack one troop/building at a time ie. PEKKA
+
+2) HARD-HITTERS - High attack damage
+
+3) FLYING - Aerial troops
+
+4) GROUND - Ground troops
+
+5) DAMAGE-SPELLS - Spell cards that cause damage or increase damage ie. Lightning, Fireball
+
+6) STUN-SPELLS - Spells that slow down/stun/freeze movement
+
+7) SPLASH - Cards which cause splash damage
+
+8) CHEAP - Cards with low elixer cost (1-2)
+
+9) MODERATE - Cards with moderate elixer cost (3-4)
+
+10) HIGH - Cards with high elixer cost (5+)
+
+11) AIR-DAMAGE - Cards that can inflict damage to flying troops
+
+12) BUILDING-BUSTERS - Cards that specifically attack building cards/towers
+
+13) BUILDING - Building cards such as X-Bow, towers, etc.
+
+14) MULTI - Cards that either spawn with multiple troops or create multiple troops (3 or more)
+
+15) TRICKY - Card has some unique attribute to it ie. Princess long range, Miner spawn freedom, etc.
+
+# POSSIBLE ATTRS - MOD DAMAGE, LOW DAMAGE, MOD HEALTH, LOW HEALTH
+
+SAMPLE DATA WILL BE STRUCTURED AS FOLLOWS:
+
+X = [PLAYER 1 ATTRIBUTES, PLAYER 2 ATTRIBUTES, WINNER] - Size of sample data is: N = (2 * # of Attributes) + 1
+
+
+'''
 
 cardDict = {
 	'mirror': 29, 'graveyard': 34, 'bombtower': 10, 'guards': 49, 'rage': 64, 'furnace': 47, 'barbarians': 40,
@@ -171,6 +239,7 @@ infoDeckDict = {
 	'xbow': {'tricky': 0, 'ADPS': 152, 'buildingbuster': 0, 'stunner': 0, 'cost': 6, 'splash': 0, 'health': 1930,
 	         'multi': 0, 'airdamage': 0, 'type': 'dbuilding', 'building': 1}}
 
+
 cardAttrDict = {
 	'archers': [1, 4, 9, 11], 'arrows': [5, 7, 9, 11],
 	'babydragon': [0, 3, 7, 9, 11], 'balloon': [0, 2, 3, 7, 10, 12], 'bandit': [2, 1, 4, 9, 15],
@@ -203,93 +272,109 @@ cardAttrDict = {
 	'valkyrie': [1, 4, 7, 9],
 	'witch': [14, 11, 10, 7, 4], 'wizard': [11, 10, 7, 4], 'xbow': [13, 10, 0], 'zap': [5, 6, 11, 8]}
 
-####### NOMINAL VALUES ##########
-
-N = len(cardDict)  # number of cards
-M = 23  # length of feature vector - also # of Attributes = M/2 - 1
-M0 = 33
-
 ####### CREATE DATA ARRAY #######
 
-def updateData():
-	file = open("brute_data", "r")
-	curr_line = file.readlines()
-	for line in curr_line:
-		X_data = []
-		Y_data = []
-		temp = line.split(', ')
-		results = list(map(int, temp))
-		for i in range(len(results) - 1 - N):
-			x = [name for name, index in cardDict.items() if (results[i] == 1 and index == i)]
-			y = [name for name, index in cardDict.items() if (results[i + N] == 1 and index == i)]
-			if (len(x) == 1):
-				X_data.append(x[0])
-			if (len(y) == 1):
-				Y_data.append(y[0])
-		winner = results[N * 2]
-		bruteDataToAttrData_1(X_data, Y_data, winner)
-		bruteDataToAttrData(X_data, Y_data, winner)
-	file.close()
+data = [0] * 149  # this is for raw_data.txt
+attr_data = [0] * 23  # this is for approach1_data
+attr_data_OLD = [0] * 33  # this is for approach1_data
+
+####### INPUT MANUAL DATA #######
+card_x = []
+card_y = []
+i = 0
+while i < 8:
+	entry = input("Enter the %d card for Player X. \n" % i)
+	while entry not in cardDict.keys():
+		print("Bitch type that in correctly!")
+		entry = input("Enter the %d card for Player X. \n" % i)
+	card_x.append(entry)
+	i += 1
+i = 0
+while i < 8:
+	entry = input("Enter the %d card for Player Y. \n" % i)
+	while entry not in cardDict.keys():
+		print("Bitch type that in correctly!")
+		entry = input("Enter the %d card for Player Y. \n" % i)
+	card_y.append(entry)
+	i += 1
+
+winner_str = input("Enter 1 if Player X won, or Enter 0 if Player Y won\n")
+
+####### PARSE INPUT STRINGS #######
+
+print(card_x)
+print(card_y)
+winner = int(winner_str)
+
+####### INSERT INTO data ARRAY#######
+
+for x in card_x:
+	data[cardDict[x]] = 1
+for y in card_y:
+	data[cardDict[y] + 74] = 1
+
+data[148] = winner
+
+file = open("raw_data", "a")
+file.write(str(data).strip('[]') + "\n")
+file.close()
+
+###### INSERT INTO approach1_data ARRAY#####
+tx,ty = 0,0
+for x in card_x:
+	attr_data[0] += infoDeckDict[x]['health']
+	attr_data[1] += infoDeckDict[x]['cost']/8
+	if infoDeckDict[x]['type'] in {'gtroop', 'atroop', 'dbuilding', 'sbuilding'}:
+		tx += 1
+		attr_data[2] += infoDeckDict[x]['ADPS']
+	attr_data[3] += infoDeckDict[x]['building']
+	attr_data[4] += infoDeckDict[x]['splash']
+	attr_data[5] += infoDeckDict[x]['stunner']
+	attr_data[6] += infoDeckDict[x]['tricky']
+	attr_data[7] += infoDeckDict[x]['multi']
+	attr_data[8] += infoDeckDict[x]['airdamage']
+	attr_data[9] += infoDeckDict[x]['buildingbuster']
+	if infoDeckDict[x]['type'] == 'dspell':
+		attr_data[10] += 1
 
 
-def bruteDataToAttrData_1(X_data, Y_data, winner):
-	attr_data = [0] * M  # this is for attr_data
-	tx, ty = 0, 0
-	for x in X_data:
-		attr_data[0] += infoDeckDict[x]['health']
-		attr_data[1] += infoDeckDict[x]['cost'] / 8
-		if infoDeckDict[x]['type'] in {'gtroop', 'atroop', 'dbuilding', 'sbuilding'}:
-			tx += 1
-			attr_data[2] += infoDeckDict[x]['ADPS']
-		attr_data[3] += infoDeckDict[x]['building']
-		attr_data[4] += infoDeckDict[x]['splash']
-		attr_data[5] += infoDeckDict[x]['stunner']
-		attr_data[6] += infoDeckDict[x]['tricky']
-		attr_data[7] += infoDeckDict[x]['multi']
-		attr_data[8] += infoDeckDict[x]['airdamage']
-		attr_data[9] += infoDeckDict[x]['buildingbuster']
-		if infoDeckDict[x]['type'] == 'dspell':
-			attr_data[10] += 1
+for y in card_y:
+	attr_data[11] += infoDeckDict[y]['health']
+	attr_data[12] += infoDeckDict[y]['cost']/8
+	if infoDeckDict[y]['type'] in {'gtroop', 'atroop', 'dbuilding', 'sbuilding'}:
+		ty += 1
+		attr_data[13] += infoDeckDict[y]['ADPS']
+	attr_data[14] += infoDeckDict[y]['building']
+	attr_data[15] += infoDeckDict[y]['splash']
+	attr_data[16] += infoDeckDict[y]['stunner']
+	attr_data[17] += infoDeckDict[y]['tricky']
+	attr_data[18] += infoDeckDict[y]['multi']
+	attr_data[19] += infoDeckDict[y]['airdamage']
+	attr_data[20] += infoDeckDict[y]['buildingbuster']
+	if infoDeckDict[y]['type'] == 'dspell':
+		attr_data[21] += 1
+	if infoDeckDict[y]['type'] in {'gtroop','atroop','dbuilding','sbuilding'}:
+		ty += 1
+attr_data[0] = attr_data[0]/tx
+attr_data[2] = attr_data[2]/tx
+attr_data[11] = attr_data[0]/ty
+attr_data[13] = attr_data[13]/tx
+attr_data[22] = winner
+print(attr_data)
+file = open("approach2_data", "a")
+file.write(str(attr_data).strip('[]') + "\n")
+file.close()
 
-	for y in Y_data:
-		attr_data[11] += infoDeckDict[y]['health']
-		attr_data[12] += infoDeckDict[y]['cost'] / 8
-		if infoDeckDict[y]['type'] in {'gtroop', 'atroop', 'dbuilding', 'sbuilding'}:
-			ty += 1
-			attr_data[13] += infoDeckDict[y]['ADPS']
-		attr_data[14] += infoDeckDict[y]['building']
-		attr_data[15] += infoDeckDict[y]['splash']
-		attr_data[16] += infoDeckDict[y]['stunner']
-		attr_data[17] += infoDeckDict[y]['tricky']
-		attr_data[18] += infoDeckDict[y]['multi']
-		attr_data[19] += infoDeckDict[y]['airdamage']
-		attr_data[20] += infoDeckDict[y]['buildingbuster']
-		if infoDeckDict[y]['type'] == 'dspell':
-			attr_data[21] += 1
-		if infoDeckDict[y]['type'] in {'gtroop', 'atroop', 'dbuilding', 'sbuilding'}:
-			ty += 1
-	attr_data[0] = attr_data[0] / tx
-	attr_data[2] = attr_data[2] / tx
-	attr_data[11] = attr_data[11] / ty
-	attr_data[13] = attr_data[13] / tx
-	attr_data[22] = winner
-	file = open("attr_data_new", "a")
-	file.write(str(attr_data).strip('[]') + "\n")
-	file.close()
+for x in card_x:
+	for attr in cardAttrDict[x]:
+		attr_data_OLD[attr] += 1
 
+for y in card_y:
+	for attr in cardAttrDict[y]:
+		attr_data_OLD[attr + 16] += 1
 
-def bruteDataToAttrData(X_data, Y_data, winner):
-	attr_data = [0] * M0  # this is for attr_data
-	for x in X_data:
-		for attr in cardAttrDict[x]:
-			attr_data[attr] += 1
-	for y in Y_data:
-		for attr in cardAttrDict[y]:
-			attr_data[attr + int((M0-1)/2)] += 1
-	attr_data[M0-1] = winner
-	file = open("attr_data", "a")
-	file.write(str(attr_data).strip('[]') + "\n")
-	file.close()
+attr_data_OLD[32] = winner
 
-
-updateData()
+file = open("approach1_data", "a")
+file.write(str(attr_data_OLD).strip('[]') + "\n")
+file.close()

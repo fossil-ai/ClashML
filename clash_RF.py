@@ -38,7 +38,7 @@ def normalize(X,y):
 	return new
 
 def load_dataset():
-	data = np.loadtxt('attr_data', delimiter=',')
+	data = np.loadtxt('approach1_data', delimiter=',')
 	np.random.shuffle(data)
 	train_perc = 85
 	half = int((data.shape[0]) * (train_perc / 100))
