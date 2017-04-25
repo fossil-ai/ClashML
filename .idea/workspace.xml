@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6576ad4c-a4a4-4ef8-92ef-e4763ecfb09e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data_collection_scripts/data_collection.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data_collection_scripts/update_data_scheme.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datasets/approach2_data" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/json_dictionaries/approach1_dict.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/json_dictionaries/approach2_dict.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/json_dictionaries/raw_data_mapping.json" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/approach2_data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data_collection.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/raw_data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/pip-delete-this-directory.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update_data_scheme.py" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/approach1_data" afterPath="$PROJECT_DIR$/datasets/approach1_data" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/clashNN.py" afterPath="$PROJECT_DIR$/algorithms_tests/clashNN.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/clash_RF.py" afterPath="$PROJECT_DIR$/algorithms_tests/clash_RF.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/clash_SVM.py" afterPath="$PROJECT_DIR$/algorithms_tests/clash_SVM.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/ClashDeepNN.iml" afterPath="$PROJECT_DIR$/.idea/ClashML.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ClashDeepNN.iws" />
@@ -62,10 +47,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="clash_RF.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="clash_RF.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/algorithms_tests/clash_RF.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1">
+            <state relative-caret-position="1620">
               <caret line="110" column="13" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="13" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
@@ -94,10 +79,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="approach2_data" pinned="false" current-in-tab="true">
+      <file leaf-file-name="approach2_data" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/datasets/approach2_data">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
+            <state relative-caret-position="-727">
               <caret line="9" column="55" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
               <folding />
             </state>
@@ -239,7 +224,7 @@
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ClashDeepNN" />
+              <option name="myItemId" value="ClashML" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -253,7 +238,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ClashDeepNN" />
+              <option name="myItemId" value="ClashML" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -263,7 +248,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ClashDeepNN" />
+              <option name="myItemId" value="ClashML" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -277,7 +262,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ClashDeepNN" />
+              <option name="myItemId" value="ClashML" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -291,7 +276,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ClashDeepNN" />
+              <option name="myItemId" value="ClashML" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -305,7 +290,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ClashDeepNN" />
+              <option name="myItemId" value="ClashML" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -884,20 +869,27 @@
       <option name="project" value="LOCAL" />
       <updated>1493076689646</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="changed around folders">
+      <created>1493083019527</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1493083019527</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="46" width="1280" height="709" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.49244714" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5640625" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -940,7 +932,8 @@
     <MESSAGE value="fixed some bugs" />
     <MESSAGE value="added couple new scripts for easy edits" />
     <MESSAGE value="major edits" />
-    <option name="LAST_COMMIT_MESSAGE" value="major edits" />
+    <MESSAGE value="changed around folders" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed around folders" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1222,16 +1215,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/algorithms_tests/clash_RF.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1">
-          <caret line="110" column="13" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data_collection_scripts/data_collection.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="103">
@@ -1254,9 +1237,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/datasets/approach2_data">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
+        <state relative-caret-position="-727">
           <caret line="9" column="55" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithms_tests/clash_RF.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1620">
+          <caret line="110" column="13" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

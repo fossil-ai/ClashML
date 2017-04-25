@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ClashDeepNN.iml" filepath="$PROJECT_DIR$/.idea/ClashDeepNN.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ClashML.iml" filepath="$PROJECT_DIR$/.idea/ClashML.iml" />
     </modules>
   </component>
 </project>
