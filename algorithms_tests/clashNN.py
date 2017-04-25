@@ -9,7 +9,6 @@ import os
 
 currDir = os.getcwd()
 
-
 M = 23
 K = int((M-1)/2)
 X_samples_shape = (1,M-1)
@@ -29,28 +28,28 @@ def normalize(X,y):
 
 def load_dataset():
 	data = np.loadtxt(currDir + "/datasets/approach2_data", delimiter=',')
-	np.random.shuffle(data)
-	train_perc = 80
-	half = int((data.shape[0]) * (train_perc/100))
+	np.random.shuffle(data) #SHUFFLE DATA
+	train_perc = 80 #training set percent - Cross Validation
+	cross = int((data.shape[0]) * (train_perc/100))
 
 	# LABEL DATA
-	Y_train = data[:half,data.shape[1] - 1]
-	Y_train_1 = [0] * half
-	for i in range(half):
+	Y_train = data[:cross,data.shape[1] - 1]
+	Y_train_1 = [0] * cross
+	for i in range(cross):
 		Y_train_1[i] = (~ int(np.asscalar(Y_train[i]))) + 2
 	Y_train = np.concatenate((Y_train,Y_train_1), axis= 0)
-	Y_test = data[half :, data.shape[1] - 1]
+	Y_test = data[cross :, data.shape[1] - 1]
 
 	# SAMPLE DATA
 	X_data = sp.delete(data, data.shape[1] - 1, axis=1)
-	X_train = X_data[:half]
+	X_train = X_data[:cross]
 	X_train_1 = np.copy(X_train)
 	for i in X_train_1:
 		temp = np.copy(i[:K])
 		i[:K] = np.copy(i[K:])
 		i[K:] = temp
 	X_train = np.concatenate((X_train,X_train_1),axis=0)
-	X_test = X_data[half:]
+	X_test = X_data[cross:]
 
 	#RESHAPE FOR NN ENTRY
 	X_train = X_train.reshape(-1,X_samples_shape[0],X_samples_shape[1])

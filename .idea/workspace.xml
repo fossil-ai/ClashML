@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6576ad4c-a4a4-4ef8-92ef-e4763ecfb09e" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/ClashDeepNN.iml" afterPath="$PROJECT_DIR$/.idea/ClashML.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/algorithms_tests/clashNN.py" afterPath="$PROJECT_DIR$/algorithms_tests/clashNN.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_collection_scripts/data_collection.py" afterPath="$PROJECT_DIR$/data_collection_scripts/data_collection.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_collection_scripts/update_data_scheme.py" afterPath="$PROJECT_DIR$/data_collection_scripts/update_data_scheme.py" />
     </list>
     <ignored path="ClashDeepNN.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,20 +28,23 @@
       <file leaf-file-name="update_data_scheme.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_collection_scripts/update_data_scheme.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+            <state relative-caret-position="64">
+              <caret line="7" column="13" selection-start-line="3" selection-start-column="0" selection-end-line="13" selection-end-column="3" />
               <folding>
-                <element signature="e#130#141#0" expanded="true" />
+                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#1340#1970#0" expanded="false" />
+                <element signature="e#2100#3731#0" expanded="false" />
+                <element signature="e#3861#4186#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="data_collection.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="data_collection.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data_collection_scripts/data_collection.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="156" column="34" selection-start-line="156" selection-start-column="34" selection-end-line="156" selection-end-column="34" />
+            <state relative-caret-position="-1091">
+              <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -47,11 +52,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="clash_RF.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="clash_RF.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/algorithms_tests/clash_RF.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1620">
-              <caret line="110" column="13" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="13" />
+            <state relative-caret-position="345">
+              <caret line="23" column="64" selection-start-line="23" selection-start-column="64" selection-end-line="23" selection-end-column="64" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -92,8 +97,8 @@
       <file leaf-file-name="clashNN.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/algorithms_tests/clashNN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+            <state relative-caret-position="109">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -165,12 +170,12 @@
         <option value="$PROJECT_DIR$/approach1_data" />
         <option value="$PROJECT_DIR$/approach2_data" />
         <option value="$PROJECT_DIR$/datasets/approach2_data" />
-        <option value="$PROJECT_DIR$/data_collection_scripts/update_data_scheme.py" />
         <option value="$PROJECT_DIR$/datasets/approach1_data" />
-        <option value="$PROJECT_DIR$/data_collection_scripts/data_collection.py" />
         <option value="$PROJECT_DIR$/algorithms_tests/clash_SVM.py" />
-        <option value="$PROJECT_DIR$/algorithms_tests/clashNN.py" />
         <option value="$PROJECT_DIR$/algorithms_tests/clash_RF.py" />
+        <option value="$PROJECT_DIR$/data_collection_scripts/update_data_scheme.py" />
+        <option value="$PROJECT_DIR$/algorithms_tests/clashNN.py" />
+        <option value="$PROJECT_DIR$/data_collection_scripts/data_collection.py" />
       </list>
     </option>
   </component>
@@ -876,14 +881,21 @@
       <option name="project" value="LOCAL" />
       <updated>1493083019527</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="changed around folders">
+      <created>1493094042538</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1493094042538</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="46" width="1280" height="709" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1179,16 +1191,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/algorithms_tests/clashNN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/algorithms_tests/clash_SVM.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1215,26 +1217,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data_collection_scripts/data_collection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="156" column="34" selection-start-line="156" selection-start-column="34" selection-end-line="156" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_collection_scripts/update_data_scheme.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
-          <folding>
-            <element signature="e#130#141#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/datasets/approach2_data">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-727">
@@ -1245,10 +1227,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/algorithms_tests/clash_RF.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1620">
-          <caret line="110" column="13" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="13" />
+        <state relative-caret-position="345">
+          <caret line="23" column="64" selection-start-line="23" selection-start-column="64" selection-end-line="23" selection-end-column="64" />
           <folding>
             <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_collection_scripts/update_data_scheme.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="7" column="13" selection-start-line="3" selection-start-column="0" selection-end-line="13" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#1340#1970#0" expanded="false" />
+            <element signature="e#2100#3731#0" expanded="false" />
+            <element signature="e#3861#4186#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithms_tests/clashNN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_collection_scripts/data_collection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1091">
+          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>

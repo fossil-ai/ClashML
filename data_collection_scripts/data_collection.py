@@ -1,77 +1,17 @@
 import json
 import os
 
+'''
+FAISAL MOHAMMAD
+4/25/2017
+
+data_collection - script to collection sample data one by one. Dictionary mapping containing how the user input is
+converted into meaningful feature data is via the json files located in json_dictionaries directory. This script will
+enter a data sample into all three data text files: raw_data, approach1_data, and approach2_data.
+
+'''
+
 currDir = os.getcwd()
-
-'''
-Faisal Mohammad
-
-Version 0.0
-
-This is the data collection module for obtaining data from Royale TV (this was done manually).
-The data retrieved regarding both players' cards and the outcome is used to create the sample data for analysis
-via grouping cards to attribute groups ('features' ).
-
-ATTRIBUTES VERSION 2 :
-
-0) TOTAL-HEALTH     - Total hit points of each card
-1) ELIXER-COST      - Average elixer cost of deck
-2) TOTAL-ADPS       - Total attack damage per second
-3) BUILDINGS        - # of building cards
-4) SPLASH           - # of splash damage cards
-5) STUNNERS         - # of cards with a stun/freeze effect
-6) TRICKY           - # of cards with unique perks (princess, miner, clone)
-7) MULTI            - # of multi-spawn cards
-8) AIR-DAMAGE       - # of cards who can attack air troops
-9) BUILDING-BUSTERS - # of cards who attack only building cards
-10) DAMAGE-SPELLS   - # of card spells that cause damage
-
-SAMPLE DATA WILL BE STRUCTURED AS FOLLOWS:
-
-X = [PLAYER 1 ATTRIBUTES, PLAYER 2 ATTRIBUTES, WINNER] - Size of sample data is: N = (2 * # of Attributes) + 1
-
-ATTRIBUTES VERSION 1:
-
-0) DEFENSE - High health
-
-1) BRAWLERS - Cards that attack one troop/building at a time ie. PEKKA
-
-2) HARD-HITTERS - High attack damage
-
-3) FLYING - Aerial troops
-
-4) GROUND - Ground troops
-
-5) DAMAGE-SPELLS - Spell cards that cause damage or increase damage ie. Lightning, Fireball
-
-6) STUN-SPELLS - Spells that slow down/stun/freeze movement
-
-7) SPLASH - Cards which cause splash damage
-
-8) CHEAP - Cards with low elixer cost (1-2)
-
-9) MODERATE - Cards with moderate elixer cost (3-4)
-
-10) HIGH - Cards with high elixer cost (5+)
-
-11) AIR-DAMAGE - Cards that can inflict damage to flying troops
-
-12) BUILDING-BUSTERS - Cards that specifically attack building cards/towers
-
-13) BUILDING - Building cards such as X-Bow, towers, etc.
-
-14) MULTI - Cards that either spawn with multiple troops or create multiple troops (3 or more)
-
-15) TRICKY - Card has some unique attribute to it ie. Princess long range, Miner spawn freedom, etc.
-
-# POSSIBLE ATTRS - MOD DAMAGE, LOW DAMAGE, MOD HEALTH, LOW HEALTH
-
-SAMPLE DATA WILL BE STRUCTURED AS FOLLOWS:
-
-X = [PLAYER 1 ATTRIBUTES, PLAYER 2 ATTRIBUTES, WINNER] - Size of sample data is: N = (2 * # of Attributes) + 1
-
-'''
-
 with open(currDir + '/json_dictionaries/raw_data_mapping.json') as json_data:
 	cardDict = dict(json.load(json_data))
 with open(currDir + '/json_dictionaries/approach2_dict.json') as json_data:
@@ -82,7 +22,7 @@ with open(currDir + '/json_dictionaries/approach1_dict.json') as json_data:
 ####### CREATE DATA ARRAY #######
 
 data = [0] * 149  # this is for raw_data.txt
-attr_data = [0] * 23  # this is for approach1_data
+attr_data = [0] * 23  # this is for approach2_data
 attr_data_OLD = [0] * 33  # this is for approach1_data
 
 ####### INPUT MANUAL DATA #######
@@ -92,7 +32,7 @@ i = 0
 while i < 8:
 	entry = input("Enter the %d card for Player X. \n" % i)
 	while entry not in cardDict.keys():
-		print("Bitch type that in correctly!")
+		print("Make sure you type it in correctly!")
 		entry = input("Enter the %d card for Player X. \n" % i)
 	card_x.append(entry)
 	i += 1

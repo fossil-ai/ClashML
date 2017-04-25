@@ -1,9 +1,22 @@
-# ONLY USE WHEN NEW ATTRIBUTES ARE ADDED AND REMOVED - DO NOT WRITE ON brute_data.txt, that is pure data and cannot be recovered.
 import json
 import os
 
+'''
+FAISAL MOHAMMAD
+4/25/2017
+
+update_data_scheme - this Python script is used only for instances of changes in the data collection scheme. It uses the
+raw_data.txt file which contains the exact card information, and allows us to regenerate the approach1_data.txt and
+approach2_data.txt files in order to fit the new schema. Any changes to the schema should be made inside the
+bruteDataToApprTwoData and bruteDataToApprOneData functions and in the data_collection.py as well for additional data
+collection.
+
+'''
+
+# get working directory
 currDir = os.getcwd()
 
+# load json data to dictionaries for the raw data and the two approaches
 with open(currDir + '/json_dictionaries/raw_data_mapping.json') as json_data:
 	cardDict = dict(json.load(json_data))
 with open(currDir + '/json_dictionaries/approach2_dict.json') as json_data:
@@ -11,20 +24,17 @@ with open(currDir + '/json_dictionaries/approach2_dict.json') as json_data:
 with open(currDir + '/json_dictionaries/approach1_dict.json') as json_data:
 	cardAttrDict = dict(json.load(json_data))
 
-####### NOMINAL VALUES ##########
-
+# Nominal Values
 N = len(cardDict)  # number of cards
-M = 23  # length of feature vector - also # of Attributes = M/2 - 1
-M0 = 33
+M = 23  # length of feature vector + label - also # of Attributes = M/2 - 1 (APPROACH 2)
+M0 = 33 # length of feature vector + label - also # of attributes = M0/2 - 1 (APPROACH 1)
 
-####### CREATE DATA ARRAY #######
-
+# conversion from raw_data.txt to the approach1_data/approach2_data files.
 def updateData():
 	file = open(currDir + "/datasets/raw_data", "r")
 	curr_line = file.readlines()
 	for line in curr_line:
-		X_data = []
-		Y_data = []
+		X_data, Y_data = [],[]
 		temp = line.split(', ')
 		results = list(map(int, temp))
 		for i in range(len(results) - 1 - N):
@@ -38,7 +48,7 @@ def updateData():
 		bruteDataToApprOneData(X_data, Y_data, winner)
 		bruteDataToApprTwoData(X_data, Y_data, winner)
 	file.close()
-
+# similar code from data_collection.py, generates entire approach2_data.txt
 def bruteDataToApprTwoData(X_data, Y_data, winner):
 	attr_data = [0] * M  # this is for approach1_data
 	tx, ty = 0, 0
@@ -81,9 +91,9 @@ def bruteDataToApprTwoData(X_data, Y_data, winner):
 	file = open(currDir + "/datasets/approach2_data", "a")
 	file.write(str(attr_data).strip('[]') + "\n")
 	file.close()
-
+# similar code from data_collection.py, generates entire approach1_data.txt
 def bruteDataToApprOneData(X_data, Y_data, winner):
-	attr_data = [0] * M0  # this is for approach1_data
+	attr_data = [0] * M0
 	for x in X_data:
 		for attr in cardAttrDict[x]:
 			attr_data[attr] += 1
@@ -94,6 +104,5 @@ def bruteDataToApprOneData(X_data, Y_data, winner):
 	file = open(currDir + "/datasets/approach1_data", "a")
 	file.write(str(attr_data).strip('[]') + "\n")
 	file.close()
-
 
 updateData()
