@@ -2,29 +2,32 @@ from sklearn.ensemble import RandomForestClassifier
 import numpy as np
 import scipy as sp
 from sklearn import preprocessing
+import os
 
-M = 33
+currDir = os.getcwd()
+
+M = 23
 K = int((M-1)/2)
 X_samples_shape = (1,M-1)
 trials = 50
 accuracy_train = 0
 accuracy_test = 0
 
-# features = ['HEALTH_X','COST_X','ADPS_X','BUILDINGS_X','SPLASH_X','STUNNER_X','TRICKY_X','MULTI_X','AIRDAMAGE_X','BB_X','DSPELL_X',
-#             'HEALTH_Y', 'COST_Y', 'ADPS_Y', 'BUILDINGS_Y', 'SPLASH_Y', 'STUNNER_Y', 'TRICKY_Y', 'MULTI_Y', 'AIRDAMAGE_Y', 'BB_Y', 'DSPELL_Y']
+features = ['HEALTH_X','COST_X','ADPS_X','BUILDINGS_X','SPLASH_X','STUNNER_X','TRICKY_X','MULTI_X','AIRDAMAGE_X','BB_X','DSPELL_X',
+            'HEALTH_Y', 'COST_Y', 'ADPS_Y', 'BUILDINGS_Y', 'SPLASH_Y', 'STUNNER_Y', 'TRICKY_Y', 'MULTI_Y', 'AIRDAMAGE_Y', 'BB_Y', 'DSPELL_Y']
+
+features_rank = {'HEALTH_X':0,'COST_X':0,'ADPS_X':0,'BUILDINGS_X':0,'SPLASH_X':0,'STUNNER_X':0,'TRICKY_X':0,'MULTI_X':0,'AIRDAMAGE_X':0,'BB_X':0,'DSPELL_X':0,
+            'HEALTH_Y':0, 'COST_Y':0, 'ADPS_Y':0, 'BUILDINGS_Y':0, 'SPLASH_Y':0, 'STUNNER_Y':0, 'TRICKY_Y':0, 'MULTI_Y':0, 'AIRDAMAGE_Y':0, 'BB_Y':0, 'DSPELL_Y':0}
+
+# features = ['DEFENSE_X','BRAWLERS_X','HARD-HITTERS__X', 'FLYING_X', 'GROUND_X' ,'DAMAGE-SPELLS_X' ,'STUN-SPELLS_X' ,'SPLASH_X' ,'CHEAP_X' ,'MODERATE_X' ,
+#             'HIGH_X' ,'AIR-DAMAGE_X', 'BUILDING-BUSTERS_X', 'BUILDING_X', 'MULTI_X', 'TRICKY_X', 'DEFENSE_Y','BRAWLERS_Y','HARD-HITTERS_Y',
+#             'FLYING_Y', 'GROUND_Y' ,'DAMAGE-SPELLS_Y' ,'STUN-SPELLS_Y' ,'SPLASH_Y' ,'CHEAP_Y' ,'MODERATE_Y' ,
+#              'HIGH_Y' ,'AIR-DAMAGE_Y', 'BUILDING-BUSTERS_Y', 'BUILDING_Y', 'MULTI_Y', 'TRICKY_Y']
 #
-# features_rank = {'HEALTH_X':0,'COST_X':0,'ADPS_X':0,'BUILDINGS_X':0,'SPLASH_X':0,'STUNNER_X':0,'TRICKY_X':0,'MULTI_X':0,'AIRDAMAGE_X':0,'BB_X':0,'DSPELL_X':0,
-#             'HEALTH_Y':0, 'COST_Y':0, 'ADPS_Y':0, 'BUILDINGS_Y':0, 'SPLASH_Y':0, 'STUNNER_Y':0, 'TRICKY_Y':0, 'MULTI_Y':0, 'AIRDAMAGE_Y':0, 'BB_Y':0, 'DSPELL_Y':0}
-
-features = ['DEFENSE_X','BRAWLERS_X','HARD-HITTERS__X', 'FLYING_X', 'GROUND_X' ,'DAMAGE-SPELLS_X' ,'STUN-SPELLS_X' ,'SPLASH_X' ,'CHEAP_X' ,'MODERATE_X' ,
-            'HIGH_X' ,'AIR-DAMAGE_X', 'BUILDING-BUSTERS_X', 'BUILDING_X', 'MULTI_X', 'TRICKY_X', 'DEFENSE_Y','BRAWLERS_Y','HARD-HITTERS_Y',
-            'FLYING_Y', 'GROUND_Y' ,'DAMAGE-SPELLS_Y' ,'STUN-SPELLS_Y' ,'SPLASH_Y' ,'CHEAP_Y' ,'MODERATE_Y' ,
-             'HIGH_Y' ,'AIR-DAMAGE_Y', 'BUILDING-BUSTERS_Y', 'BUILDING_Y', 'MULTI_Y', 'TRICKY_Y']
-
-features_rank = {'DEFENSE_X':0,'BRAWLERS_X':0,'HARD-HITTERS__X':0, 'FLYING_X':0, 'GROUND_X':0 ,'DAMAGE-SPELLS_X':0,'STUN-SPELLS_X' :0 ,'SPLASH_X' :0,'CHEAP_X' :0,'MODERATE_X':0 ,
-            'HIGH_X' :0,'AIR-DAMAGE_X':0, 'BUILDING-BUSTERS_X':0, 'BUILDING_X':0, 'MULTI_X':0, 'TRICKY_X':0, 'DEFENSE_Y':0,'BRAWLERS_Y':0,'HARD-HITTERS_Y':0,
-            'FLYING_Y':0, 'GROUND_Y' :0,'DAMAGE-SPELLS_Y':0 ,'STUN-SPELLS_Y':0 ,'SPLASH_Y' :0,'CHEAP_Y' :0,'MODERATE_Y' :0,
-             'HIGH_Y' :0,'AIR-DAMAGE_Y':0, 'BUILDING-BUSTERS_Y':0, 'BUILDING_Y':0, 'MULTI_Y':0, 'TRICKY_Y':0}
+# features_rank = {'DEFENSE_X':0,'BRAWLERS_X':0,'HARD-HITTERS__X':0, 'FLYING_X':0, 'GROUND_X':0 ,'DAMAGE-SPELLS_X':0,'STUN-SPELLS_X' :0 ,'SPLASH_X' :0,'CHEAP_X' :0,'MODERATE_X':0 ,
+#             'HIGH_X' :0,'AIR-DAMAGE_X':0, 'BUILDING-BUSTERS_X':0, 'BUILDING_X':0, 'MULTI_X':0, 'TRICKY_X':0, 'DEFENSE_Y':0,'BRAWLERS_Y':0,'HARD-HITTERS_Y':0,
+#             'FLYING_Y':0, 'GROUND_Y' :0,'DAMAGE-SPELLS_Y':0 ,'STUN-SPELLS_Y':0 ,'SPLASH_Y' :0,'CHEAP_Y' :0,'MODERATE_Y' :0,
+#              'HIGH_Y' :0,'AIR-DAMAGE_Y':0, 'BUILDING-BUSTERS_Y':0, 'BUILDING_Y':0, 'MULTI_Y':0, 'TRICKY_Y':0}
 
 
 def standardize(X,y):
@@ -38,7 +41,7 @@ def normalize(X,y):
 	return new
 
 def load_dataset():
-	data = np.loadtxt('approach1_data', delimiter=',')
+	data = np.loadtxt(currDir + "/datasets/approach2_data", delimiter=',')
 	np.random.shuffle(data)
 	train_perc = 85
 	half = int((data.shape[0]) * (train_perc / 100))

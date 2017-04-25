@@ -3,6 +3,9 @@ import scipy as sp
 import matplotlib.pyplot as plt
 from sklearn import svm
 from sklearn import preprocessing
+import os
+
+currDir = os.getcwd()
 
 M = 23
 K = int((M-1)/2)
@@ -22,7 +25,7 @@ def normalize(X,y):
 	return new
 
 def load_dataset():
-	data = np.loadtxt('approach2_data', delimiter=',')
+	data = np.loadtxt(currDir + "/datasets/approach2_data", delimiter=',')
 	np.random.shuffle(data)
 	train_perc = 90
 	half = int((data.shape[0]) * (train_perc / 100))

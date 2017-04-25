@@ -5,9 +5,12 @@ from lasagne import layers
 from lasagne.updates import nesterov_momentum
 from nolearn.lasagne import NeuralNet
 from sklearn import preprocessing
+import os
+
+currDir = os.getcwd()
 
 
-M = 33
+M = 23
 K = int((M-1)/2)
 X_samples_shape = (1,M-1)
 trials = 25
@@ -25,7 +28,7 @@ def normalize(X,y):
 	return new
 
 def load_dataset():
-	data = np.loadtxt('approach1_data', delimiter=',')
+	data = np.loadtxt(currDir + "/datasets/approach2_data", delimiter=',')
 	np.random.shuffle(data)
 	train_perc = 80
 	half = int((data.shape[0]) * (train_perc/100))
