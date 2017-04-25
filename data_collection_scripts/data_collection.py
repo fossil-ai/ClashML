@@ -11,6 +11,7 @@ enter a data sample into all three data text files: raw_data, approach1_data, an
 
 '''
 
+# get current working directory and use path to get json data files for dictionary mappings
 currDir = os.getcwd()
 with open(currDir + '/json_dictionaries/raw_data_mapping.json') as json_data:
 	cardDict = dict(json.load(json_data))
@@ -19,15 +20,12 @@ with open(currDir + '/json_dictionaries/approach2_dict.json') as json_data:
 with open(currDir + '/json_dictionaries/approach1_dict.json') as json_data:
 	cardAttrDict = dict(json.load(json_data))
 
-####### CREATE DATA ARRAY #######
-
 data = [0] * 149  # this is for raw_data.txt
 attr_data = [0] * 23  # this is for approach2_data
 attr_data_OLD = [0] * 33  # this is for approach1_data
 
-####### INPUT MANUAL DATA #######
-card_x = []
-card_y = []
+#### Input Data #######
+card_x, card_y = [], []
 i = 0
 while i < 8:
 	entry = input("Enter the %d card for Player X. \n" % i)
@@ -46,14 +44,9 @@ while i < 8:
 	i += 1
 
 winner_str = input("Enter 1 if Player X won, or Enter 0 if Player Y won\n")
-
-####### PARSE INPUT STRINGS #######
-
-print(card_x)
-print(card_y)
 winner = int(winner_str)
 
-####### INSERT INTO data ARRAY#######
+# Data for raw_data.txt
 
 for x in card_x:
 	data[cardDict[x]] = 1
@@ -66,7 +59,8 @@ file = open(currDir + "/datasets/raw_data", "a")
 file.write(str(data).strip('[]') + "\n")
 file.close()
 
-###### INSERT INTO approach1_data ARRAY#####
+# Data for approach 2
+
 tx, ty = 0, 0
 for x in card_x:
 	attr_data[0] += infoDeckDict[x]['health']
@@ -108,6 +102,8 @@ print(attr_data)
 file = open(currDir + "/datasets/approach2_data", "a")
 file.write(str(attr_data).strip('[]') + "\n")
 file.close()
+
+# Data for approach 1
 
 for x in card_x:
 	for attr in cardAttrDict[x]:

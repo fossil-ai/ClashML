@@ -3,9 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="6576ad4c-a4a4-4ef8-92ef-e4763ecfb09e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/algorithms_tests/clashNN.py" afterPath="$PROJECT_DIR$/algorithms_tests/clashNN.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/algorithms_tests/clash_RF.py" afterPath="$PROJECT_DIR$/algorithms_tests/clash_RF.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/algorithms_tests/clash_SVM.py" afterPath="$PROJECT_DIR$/algorithms_tests/clash_SVM.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_collection_scripts/data_collection.py" afterPath="$PROJECT_DIR$/data_collection_scripts/data_collection.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_collection_scripts/update_data_scheme.py" afterPath="$PROJECT_DIR$/data_collection_scripts/update_data_scheme.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/approach1_data" afterPath="$PROJECT_DIR$/datasets/approach1_data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/approach2_data" afterPath="$PROJECT_DIR$/datasets/approach2_data" />
     </list>
     <ignored path="ClashDeepNN.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,22 +45,10 @@
       <file leaf-file-name="data_collection.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data_collection_scripts/data_collection.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1091">
-              <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+            <state relative-caret-position="555">
+              <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="clash_RF.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/algorithms_tests/clash_RF.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="64" selection-start-line="23" selection-start-column="64" selection-end-line="23" selection-end-column="64" />
-              <folding>
-                <element signature="e#0#51#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -67,18 +57,8 @@
       <file leaf-file-name="approach1_data" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/datasets/approach1_data">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-692">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="raw_data" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/datasets/raw_data">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-692">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="-810">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -87,8 +67,18 @@
       <file leaf-file-name="approach2_data" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/datasets/approach2_data">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-727">
-              <caret line="9" column="55" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
+            <state relative-caret-position="-675">
+              <caret line="11" column="55" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="raw_data" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/datasets/raw_data">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -106,13 +96,31 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="clash_RF.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/algorithms_tests/clash_RF.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-461">
+              <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+              <folding>
+                <element signature="e#0#51#0" expanded="true" />
+                <element signature="e#2087#2162#0" expanded="false" />
+                <element signature="e#2187#2258#0" expanded="false" />
+                <element signature="e#2282#3193#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="clash_SVM.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/algorithms_tests/clash_SVM.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+            <state relative-caret-position="90">
+              <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#481#555#0" expanded="false" />
+                <element signature="e#578#648#0" expanded="false" />
+                <element signature="e#671#1669#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -169,13 +177,14 @@
         <option value="$PROJECT_DIR$/update_data_scheme.py" />
         <option value="$PROJECT_DIR$/approach1_data" />
         <option value="$PROJECT_DIR$/approach2_data" />
-        <option value="$PROJECT_DIR$/datasets/approach2_data" />
-        <option value="$PROJECT_DIR$/datasets/approach1_data" />
-        <option value="$PROJECT_DIR$/algorithms_tests/clash_SVM.py" />
-        <option value="$PROJECT_DIR$/algorithms_tests/clash_RF.py" />
         <option value="$PROJECT_DIR$/data_collection_scripts/update_data_scheme.py" />
         <option value="$PROJECT_DIR$/algorithms_tests/clashNN.py" />
+        <option value="$PROJECT_DIR$/algorithms_tests/clash_SVM.py" />
         <option value="$PROJECT_DIR$/data_collection_scripts/data_collection.py" />
+        <option value="$PROJECT_DIR$/algorithms_tests/clash_RF.py" />
+        <option value="$PROJECT_DIR$/datasets/approach1_data" />
+        <option value="$PROJECT_DIR$/datasets/approach2_data" />
+        <option value="$PROJECT_DIR$/datasets/raw_data" />
       </list>
     </option>
   </component>
@@ -440,7 +449,7 @@
       </FILE-GROUP>
     </UpdatedFiles>
   </component>
-  <component name="RunManager" selected="Python.clash_RF">
+  <component name="RunManager" selected="Python.data_collection">
     <configuration default="false" name="clash_RF" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -492,23 +501,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="data_collection" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="ClashDeepNN" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_collection_scripts/data_collection.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
     <configuration default="false" name="update_data_scheme" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -522,6 +514,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="ClashDeepNN" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_collection_scripts/update_data_scheme.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="data_collection" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ClashML" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_collection_scripts/data_collection.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -682,14 +691,14 @@
       <item index="1" class="java.lang.String" itemvalue="Python.clash_RF" />
       <item index="2" class="java.lang.String" itemvalue="Python.clashNN" />
       <item index="3" class="java.lang.String" itemvalue="Python.repl" />
-      <item index="4" class="java.lang.String" itemvalue="Python.data_collection" />
-      <item index="5" class="java.lang.String" itemvalue="Python.update_data_scheme" />
+      <item index="4" class="java.lang.String" itemvalue="Python.update_data_scheme" />
+      <item index="5" class="java.lang.String" itemvalue="Python.data_collection" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.clash_RF" />
-        <item index="1" class="java.lang.String" itemvalue="Python.update_data_scheme" />
-        <item index="2" class="java.lang.String" itemvalue="Python.data_collection" />
+        <item index="0" class="java.lang.String" itemvalue="Python.data_collection" />
+        <item index="1" class="java.lang.String" itemvalue="Python.clash_RF" />
+        <item index="2" class="java.lang.String" itemvalue="Python.update_data_scheme" />
         <item index="3" class="java.lang.String" itemvalue="Python.repl" />
         <item index="4" class="java.lang.String" itemvalue="Python.clashNN" />
       </list>
@@ -888,12 +897,19 @@
       <option name="project" value="LOCAL" />
       <updated>1493094042538</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="adding comments">
+      <created>1493095612855</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1493095612855</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="46" width="1280" height="709" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -901,7 +917,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36858007" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5640625" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -945,11 +961,12 @@
     <MESSAGE value="added couple new scripts for easy edits" />
     <MESSAGE value="major edits" />
     <MESSAGE value="changed around folders" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed around folders" />
+    <MESSAGE value="adding comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding comments" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1191,50 +1208,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/algorithms_tests/clash_SVM.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datasets/approach1_data">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-692">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datasets/raw_data">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-692">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datasets/approach2_data">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-727">
-          <caret line="9" column="55" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/algorithms_tests/clash_RF.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="64" selection-start-line="23" selection-start-column="64" selection-end-line="23" selection-end-column="64" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data_collection_scripts/update_data_scheme.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
@@ -1258,10 +1231,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/algorithms_tests/clash_SVM.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#481#555#0" expanded="false" />
+            <element signature="e#578#648#0" expanded="false" />
+            <element signature="e#671#1669#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithms_tests/clash_RF.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-461">
+          <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+            <element signature="e#2087#2162#0" expanded="false" />
+            <element signature="e#2187#2258#0" expanded="false" />
+            <element signature="e#2282#3193#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datasets/approach1_data">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-810">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datasets/approach2_data">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-675">
+          <caret line="11" column="55" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datasets/raw_data">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/data_collection_scripts/data_collection.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1091">
-          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+        <state relative-caret-position="555">
+          <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>

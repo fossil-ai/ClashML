@@ -7,17 +7,22 @@ import os
 currDir = os.getcwd()
 
 M = 23
-K = int((M-1)/2)
-X_samples_shape = (1,M-1)
+K = int((M - 1) / 2)
+X_samples_shape = (1, M - 1)
 trials = 50
 accuracy_train = 0
 accuracy_test = 0
 
-features = ['HEALTH_X','COST_X','ADPS_X','BUILDINGS_X','SPLASH_X','STUNNER_X','TRICKY_X','MULTI_X','AIRDAMAGE_X','BB_X','DSPELL_X',
-            'HEALTH_Y', 'COST_Y', 'ADPS_Y', 'BUILDINGS_Y', 'SPLASH_Y', 'STUNNER_Y', 'TRICKY_Y', 'MULTI_Y', 'AIRDAMAGE_Y', 'BB_Y', 'DSPELL_Y']
+features = ['HEALTH_X', 'COST_X', 'ADPS_X', 'BUILDINGS_X', 'SPLASH_X', 'STUNNER_X', 'TRICKY_X', 'MULTI_X',
+            'AIRDAMAGE_X', 'BB_X', 'DSPELL_X',
+            'HEALTH_Y', 'COST_Y', 'ADPS_Y', 'BUILDINGS_Y', 'SPLASH_Y', 'STUNNER_Y', 'TRICKY_Y', 'MULTI_Y',
+            'AIRDAMAGE_Y', 'BB_Y', 'DSPELL_Y']
 
-features_rank = {'HEALTH_X':0,'COST_X':0,'ADPS_X':0,'BUILDINGS_X':0,'SPLASH_X':0,'STUNNER_X':0,'TRICKY_X':0,'MULTI_X':0,'AIRDAMAGE_X':0,'BB_X':0,'DSPELL_X':0,
-            'HEALTH_Y':0, 'COST_Y':0, 'ADPS_Y':0, 'BUILDINGS_Y':0, 'SPLASH_Y':0, 'STUNNER_Y':0, 'TRICKY_Y':0, 'MULTI_Y':0, 'AIRDAMAGE_Y':0, 'BB_Y':0, 'DSPELL_Y':0}
+features_rank = {'HEALTH_X': 0, 'COST_X': 0, 'ADPS_X': 0, 'BUILDINGS_X': 0, 'SPLASH_X': 0, 'STUNNER_X': 0,
+                 'TRICKY_X': 0, 'MULTI_X': 0, 'AIRDAMAGE_X': 0, 'BB_X': 0, 'DSPELL_X': 0,
+                 'HEALTH_Y': 0, 'COST_Y': 0, 'ADPS_Y': 0, 'BUILDINGS_Y': 0, 'SPLASH_Y': 0, 'STUNNER_Y': 0,
+                 'TRICKY_Y': 0, 'MULTI_Y': 0, 'AIRDAMAGE_Y': 0, 'BB_Y': 0, 'DSPELL_Y': 0}
+
 
 # features = ['DEFENSE_X','BRAWLERS_X','HARD-HITTERS__X', 'FLYING_X', 'GROUND_X' ,'DAMAGE-SPELLS_X' ,'STUN-SPELLS_X' ,'SPLASH_X' ,'CHEAP_X' ,'MODERATE_X' ,
 #             'HIGH_X' ,'AIR-DAMAGE_X', 'BUILDING-BUSTERS_X', 'BUILDING_X', 'MULTI_X', 'TRICKY_X', 'DEFENSE_Y','BRAWLERS_Y','HARD-HITTERS_Y',
@@ -30,15 +35,17 @@ features_rank = {'HEALTH_X':0,'COST_X':0,'ADPS_X':0,'BUILDINGS_X':0,'SPLASH_X':0
 #              'HIGH_Y' :0,'AIR-DAMAGE_Y':0, 'BUILDING-BUSTERS_Y':0, 'BUILDING_Y':0, 'MULTI_Y':0, 'TRICKY_Y':0}
 
 
-def standardize(X,y):
+def standardize(X, y):
 	a = preprocessing.StandardScaler()
-	new = a.fit_transform(X,y)
+	new = a.fit_transform(X, y)
 	return new
 
-def normalize(X,y):
+
+def normalize(X, y):
 	a = preprocessing.Normalizer()
-	new = a.fit_transform(X,y)
+	new = a.fit_transform(X, y)
 	return new
+
 
 def load_dataset():
 	data = np.loadtxt(currDir + "/datasets/approach2_data", delimiter=',')
@@ -67,64 +74,48 @@ def load_dataset():
 	Y_train = Y_train.astype(np.uint8)
 	Y_test = Y_test.astype(np.uint8)
 
-
-	#SCALING AND PREPROCESSING
-	#Standardizing hurt performance, so stick with normalization
-	X_train = normalize(X_train,Y_train)
-	X_test = normalize(X_test,Y_test)
-
+	# PREPROCESSING
+	X_train = normalize(X_train, Y_train)
+	X_test = normalize(X_test, Y_test)
 
 	return X_train, Y_train, X_test, Y_test
+
 
 for i in range(trials):
 	print("Starting Trial {}".format(i))
 	X_train, Y_train, X_test, Y_test = load_dataset()
 	# fit the model,
-	clf = RandomForestClassifier(n_estimators=15, max_features=None, random_state=0,n_jobs=-1)
+	clf = RandomForestClassifier(n_estimators=15, max_features=None, random_state=0, n_jobs=-1)
 	clf.fit(X_train, Y_train)
 	feature_imp = clf.feature_importances_
 	indices = np.argsort(feature_imp)[::-1]
-	for f in range(M-1):
-		#print("%2d) %-*s %f" % (f+1,30,features[indices[f]],feature_imp[indices[f]]))
+	for f in range(M - 1):
 		features_rank[features[indices[f]]] += feature_imp[indices[f]]
 
-
-	# print("CHECK AGAINST TRAINING DATA")
-
+	# Prediction with training data
 	preds = clf.predict(X_train)
-
 	score = 0
-	# print("TR || P")
-	for x,y in zip(Y_train, preds):
-		#print(str(x) + "  " + str(y))
+	for x, y in zip(Y_train, preds):
 		if x == y:
-			score+=1
-
-	accuracy_tr = score/len(Y_train)
+			score += 1
+	accuracy_tr = score / len(Y_train)
 	accuracy_train += accuracy_tr
-	# print(score/len(Y_train))
 
-	# print("CHECK AGAINST TEST DATA")
-
+	# Prediction with test data
 	preds = clf.predict(X_test)
-
 	score = 0
-	# print("TS || P")
-	for x,y in zip(Y_test,preds):
-		#print(str(x) + "  " + str(y))
+	for x, y in zip(Y_test, preds):
 		if x == y:
-			score+=1
-
+			score += 1
 	accuracy_ts = score / len(Y_test)
 	accuracy_test += accuracy_ts
 
-
-print('TRAINING ACCURACY IS: {}'.format(str(accuracy_train/trials)))
-print('TEST ACCURACY IS: {} \n'.format(str(accuracy_test/trials)))
+print('TRAINING ACCURACY IS: {}'.format(str(accuracy_train / trials)))
+print('TEST ACCURACY IS: {} \n'.format(str(accuracy_test / trials)))
 
 # FEATURE RANKING
 for i in features_rank:
-	features_rank[i] = features_rank[i]/trials
+	features_rank[i] = features_rank[i] / trials
 
 print(" ---  FEATURE IMPORTANCE --- \n")
 for w in sorted(features_rank, key=features_rank.get, reverse=True):
