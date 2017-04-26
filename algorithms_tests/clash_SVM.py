@@ -6,13 +6,13 @@ import os
 
 # get current working directory
 currDir = os.getcwd()
-
+print(currDir)
 M = 23 # number of features plus label for Approach 2 (23) and Approach 1 (33)
 K = int((M-1)/2) # number of features for one player
 X_samples_shape = (1,M-1) # Dimension of one sample data
 
 # number of trials to run
-trials = 250
+trials = 1000
 
 # initialize accuracy score
 accuracy_train = 0
