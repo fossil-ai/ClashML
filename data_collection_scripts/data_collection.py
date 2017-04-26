@@ -16,6 +16,7 @@ class DataCollection:
 	def __init__(self):
 		self.currDir = os.getcwd()
 		self.rawDict,self.apprTwoDict,self.apprOneDict = self.getDictionaryMapping()
+		self.N = len(self.rawDict)
 
 	# Enter data
 	def collectData(self):
@@ -132,6 +133,26 @@ class DataCollection:
 		with open(self.currDir + '/json_dictionaries/approach1_dict.json') as json_data:
 			apprOneDict = dict(json.load(json_data))
 		return rawDict, apprTwoDict, apprOneDict
+
+	# conversion from raw_data.txt to the approach1_data/approach2_data files - used to recover data from raw_data ONLY.
+	def updateData(self):
+		file = open(self.currDir + "/datasets/raw_data", "r")
+		curr_line = file.readlines()
+		for line in curr_line:
+			X_data, Y_data = [], []
+			temp = line.split(', ')
+			results = list(map(int, temp))
+			for i in range(len(results) - 1 - self.N):
+				x = [name for name, index in self.rawDict.items() if (results[i] == 1 and index == i)]
+				y = [name for name, index in self.rawDict.items() if (results[i + self.N] == 1 and index == i)]
+				if (len(x) == 1):
+					X_data.append(x[0])
+				if (len(y) == 1):
+					Y_data.append(y[0])
+			winner = results[self.N * 2]
+			self.createApprOneDataSample(X_data,Y_data,winner)
+			self.createApprTwoDataSample(X_data,Y_data,winner)
+		file.close()
 
 data_collection = DataCollection()
 card_x, card_y, winner = data_collection.collectData()

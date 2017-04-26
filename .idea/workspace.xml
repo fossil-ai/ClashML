@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6576ad4c-a4a4-4ef8-92ef-e4763ecfb09e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/data_collection_test.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data_collection_scripts/update_data_scheme.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/algorithms_tests/clash_RF.py" afterPath="$PROJECT_DIR$/algorithms_tests/clash_RF.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/algorithms_tests/clash_SVM.py" afterPath="$PROJECT_DIR$/algorithms_tests/clash_SVM.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_collection_scripts/data_collection.py" afterPath="$PROJECT_DIR$/data_collection_scripts/data_collection.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/approach1_data" afterPath="$PROJECT_DIR$/datasets/approach1_data" />
     </list>
     <ignored path="ClashDeepNN.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,18 +25,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="data_collection.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="data_collection.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data_collection_scripts/data_collection.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="123" column="37" selection-start-line="123" selection-start-column="37" selection-end-line="123" selection-end-column="37" />
+            <state relative-caret-position="164">
+              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
-                <element signature="e#675#1364#0" expanded="false" />
-                <element signature="e#1466#1767#0" expanded="false" />
-                <element signature="e#1868#3736#0" expanded="false" />
-                <element signature="e#3837#4246#0" expanded="false" />
+                <element signature="e#704#1393#0" expanded="false" />
+                <element signature="e#1495#1796#0" expanded="false" />
+                <element signature="e#1897#3765#0" expanded="false" />
+                <element signature="e#3866#4275#0" expanded="false" />
+                <element signature="e#4356#4514#0" expanded="false" />
+                <element signature="e#4589#5008#0" expanded="false" />
+                <element signature="e#5153#5836#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="data_collection_test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/data_collection_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -52,7 +64,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="approach2_data" pinned="false" current-in-tab="true">
+      <file leaf-file-name="approach2_data" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/datasets/approach2_data">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="343">
@@ -128,10 +140,10 @@
         <option value="$PROJECT_DIR$/algorithms_tests/clash_SVM.py" />
         <option value="$PROJECT_DIR$/algorithms_tests/clash_RF.py" />
         <option value="$PROJECT_DIR$/tests/data_collection_test.py" />
-        <option value="$PROJECT_DIR$/data_collection_scripts/data_collection.py" />
         <option value="$PROJECT_DIR$/datasets/approach1_data" />
         <option value="$PROJECT_DIR$/datasets/approach2_data" />
         <option value="$PROJECT_DIR$/datasets/raw_data" />
+        <option value="$PROJECT_DIR$/data_collection_scripts/data_collection.py" />
       </list>
     </option>
   </component>
@@ -750,7 +762,14 @@
       <option name="project" value="LOCAL" />
       <updated>1493099101794</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="cleaned data_collection.py">
+      <created>1493193456224</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1493193456224</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -808,7 +827,8 @@
     <MESSAGE value="major edits" />
     <MESSAGE value="changed around folders" />
     <MESSAGE value="adding comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding comments" />
+    <MESSAGE value="cleaned data_collection.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleaned data_collection.py" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -889,12 +909,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="53" selection-end-column="101" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#1340#1970#0" expanded="false" />
-            <element signature="e#2100#3731#0" expanded="false" />
-            <element signature="e#3861#4186#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -928,7 +943,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/data_collection_test.py" />
     <entry file="file://$PROJECT_DIR$/algorithms_tests/clash_SVM.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-115">
@@ -962,37 +976,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data_collection_scripts/update_data_scheme.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#1340#1970#0" expanded="false" />
-            <element signature="e#2100#3731#0" expanded="false" />
-            <element signature="e#3861#4186#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_collection_scripts/data_collection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="123" column="37" selection-start-line="123" selection-start-column="37" selection-end-line="123" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#675#1364#0" expanded="false" />
-            <element signature="e#1466#1767#0" expanded="false" />
-            <element signature="e#1868#3736#0" expanded="false" />
-            <element signature="e#3837#4246#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/datasets/approach1_data">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="358">
           <caret line="75" column="97" selection-start-line="75" selection-start-column="97" selection-end-line="75" selection-end-column="97" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datasets/approach2_data">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="75" column="86" selection-start-line="75" selection-start-column="86" selection-end-line="75" selection-end-column="86" />
           <folding />
         </state>
       </provider>
@@ -1005,11 +1000,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/datasets/approach2_data">
+    <entry file="file://$PROJECT_DIR$/tests/data_collection_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="75" column="86" selection-start-line="75" selection-start-column="86" selection-end-line="75" selection-end-column="86" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_collection_scripts/update_data_scheme.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="49" column="4" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_collection_scripts/data_collection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#704#1393#0" expanded="false" />
+            <element signature="e#1495#1796#0" expanded="false" />
+            <element signature="e#1897#3765#0" expanded="false" />
+            <element signature="e#3866#4275#0" expanded="false" />
+            <element signature="e#4356#4514#0" expanded="false" />
+            <element signature="e#4589#5008#0" expanded="false" />
+            <element signature="e#5153#5836#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
