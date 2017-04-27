@@ -94,8 +94,8 @@ For each algorithm, the data matrix was shuffled before the cross-validation spl
  
  learning rate = 0.05, max # of epochs = 250, Layers [Input, Dense (64 units), Dropout (*p=0.25*), Output]
 
-| Cross-Validation Split (Train/Test)|   Training Accuracy         | Test Accuracy  |
-| ------------- |:-------------:| -----:|
+| Cross-Validation Split (Train/Test)|   Training Accuracy  | Test Accuracy  |
+| :-------------:|:-------------:| :-----:|
 | 60/40         | 90.91%      | 60.45% |
 | 80/20         | 91.81% |   65.5% |
 | 95/5 | 92.86%    |    63.0% |
@@ -105,10 +105,12 @@ For each algorithm, the data matrix was shuffled before the cross-validation spl
 Parameters:
 penalty term of error *C* = 2, kernal = RBF
 
-| Cross-Validation Split (Train/Test)|   Test Accuracy (Approach 1 Dataset)        | Test Accuracy (Approach 2 Dataset) |
-| ------------- |:-------------:| -----:|
-| 60/40         | 90.91%      | 60.45% |
-| 80/20         | 91.81% |   65.5% |
-| 95/5 | 92.86%    |    63.0% |
+| Cross-Validation Split (Train/Test)|  Test Accuracy (Approach 1 Dataset) | Test Accuracy (Approach 2 Dataset) |
+| :-------------: |:-------------:| :-------------:|
+| 60/40         | 65.69%      | 66.56% |
+| 80/20         | 67.92% |   68.43% |
+| 95/5 | 65.30%   |   65.20% |
+
+So far for both SVM and NN, test accuracy was higher on the 80/20 split. I guess that's why it's conventional :)
 
 
