@@ -100,7 +100,7 @@ For each algorithm, the data matrix was shuffled before the cross-validation spl
 | 80/20         | 91.81% |   65.5% |
 | 95/5 | 92.86%    |    63.0% |
 
-**Support Vector Machine (scikit-learn) - Each CV split was avaeraged over 250 trials, done on both datasets. We do not particular care about the training accuracy, so we will look at only test accuracy** 
+**Support Vector Machine (scikit-learn) - Each CV split was averaged over 250 trials, done on both datasets. We do not particular care about the training accuracy, so we will look at only test accuracy** 
 
 Parameters:
 penalty term of error *C* = 2, kernal = RBF
@@ -112,5 +112,47 @@ penalty term of error *C* = 2, kernal = RBF
 | 95/5 | 65.30%   |   65.20% |
 
 So far for both SVM and NN, test accuracy was higher on the 80/20 split. I guess that's why it's conventional :)
+
+** Random Forest Classifier (RFC) (scikit-learn) - Each CV split per dataset was averaged over 100 trials. The RandomForestClassifier API provided a very nice feature (.feature_importances) which I assumes ranks the features we decided on in the order they contribute the most to the binary classification decision.** 
+
+Parameters:
+number of trees in forest = 15 
+
+| Cross-Validation Split (Train/Test)|  Test Accuracy (Approach 1 Dataset) | Test Accuracy (Approach 2 Dataset) |
+| :-------------: |:-------------:| :-------------:|
+| 60/40         | 66.06%      | 66.80% |
+| 80/20         | 66.50% |   `68.56%`  |
+| 95/5 | 64.25%   |   `69.00%` |
+
+Interesting how the 95/5 split for Approach 2 gave 69% where it performed much lower for Approach 1. To be honest, it's hard to predict much based on only 77 samples, so I will be updating results here and there once I collect more in the future (or you can collect some as well :D ). Getting the feature importance from the RFC gave the following for the 95/5 split on Approach 2:
+
+ADPS_Y : 0.1585116432655841
+ADPS_X : 0.15705471661361553
+AIRDAMAGE_Y : 0.04008767428358454
+BB_Y : 0.03981336635515329
+AIRDAMAGE_X : 0.039719407378624456
+HEALTH_Y : 0.03927363435433432
+BUILDINGS_Y : 0.038275569313462696
+TRICKY_Y : 0.03679796389356237
+DSPELL_X : 0.03629248739955291
+TRICKY_X : 0.03618435955547795
+BUILDINGS_X : 0.03584786846806187
+BB_X : 0.03549451997354712
+SPLASH_Y : 0.03448379427572234
+SPLASH_X : 0.03328395369083422
+DSPELL_Y : 0.033145979606698045
+MULTI_Y : 0.03246443066060067
+HEALTH_X : 0.03180474329703207
+MULTI_X : 0.03180109137800274
+STUNNER_Y : 0.03125509994131526
+STUNNER_X : 0.03108361712571109
+COST_X : 0.024086202652025778
+COST_Y : 0.02323787651749665
+
+Whereas many of the features for player X and Y contribute roughly ~2-4% each, the ADPS_X,ADPS_Y features, which stood for Attack Damage Per Second (averaged over the deck), had a whopping combined total of ~30% importance. This should not come as a surprise, but it shows that since we do not have direct access to the average damage per second of a DECK like we do for the average cost of the deck (which happened to be the least contributing factor), that it's often overlooked by many players. 
+
+Anyhow, with only 77 samples, Random Forest performed the best, then SVM, and then NN. To be honest NN might be terrible for this case. Especially with the small amount of samples. 
+
+Remember this was BINARY CLASSIFICATION. A test accuracy of 50% would have meant this study was pointless, since 50% is random guessing. BUT, but we must remember, without observing the actual gameplay or skills of the players, we are trying to predict the winner. So even reaching 75% test accuracy would be pretty impressive for judging a winner solely on deck composition. Maybe if we had about 1000 samples, we could see some exciting patterns! Well that is all from me. I encourage those reading this to use what I have so far and tweak whatever they see fit. I'm no machine learning expert, so I'm sure there are plenty of other algorithms to try, and hyperparamters to tune! Good Luck!
 
 
