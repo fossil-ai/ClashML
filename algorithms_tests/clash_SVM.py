@@ -4,15 +4,20 @@ from sklearn import svm
 from sklearn import preprocessing
 import os
 
-# get current working directory
-currDir = os.getcwd()
-print(currDir)
-M = 23 # number of features plus label for Approach 2 (23) and Approach 1 (33)
-K = int((M-1)/2) # number of features for one player
-X_samples_shape = (1,M-1) # Dimension of one sample data
+# which approach
+appr = input("Which approach will you use? 1 or 2?\n")
+if appr == 1:
+	M = 33 # number of features plus label for Approach 2 (23) and Approach 1 (33)
+	dataFilePath = os.path.abspath('../datasets/approach1_data')
+else:
+	M = 23  # number of features plus label for Approach 2 (23) and Approach 1 (33)
+	dataFilePath = os.path.abspath('../datasets/approach2_data')
+
+K = int((M - 1) / 2)  # number of features for one player
+X_samples_shape = (1, M - 1)  # Dimension of one sample data
 
 # number of trials to run
-trials = 1000
+trials = 100
 
 # initialize accuracy score
 accuracy_train = 0
@@ -29,7 +34,7 @@ def normalize(X,y):
 	return new
 
 def load_dataset():
-	data = np.loadtxt(currDir + "/datasets/approach2_data", delimiter=',')
+	data = np.loadtxt(dataFilePath, delimiter=',')
 	np.random.shuffle(data) # Shuffle data to obtain randomness between trials
 	train_perc = 90 # Cross Validation Split
 	cross = int((data.shape[0]) * (train_perc / 100))

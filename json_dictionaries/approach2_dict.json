@@ -359,7 +359,7 @@
     "type": "atroop",
     "cost": 4,
     "building": 0,
-    "buildingbuster": 1,
+    "buildingbuster": 0,
     "tricky": 0
   },
   "mortar": {

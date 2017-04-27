@@ -4,30 +4,28 @@ import lasagne
 from lasagne import layers
 from lasagne.updates import nesterov_momentum
 from nolearn.lasagne import NeuralNet
-from sklearn import preprocessing
 import os
 
-currDir = os.getcwd()
+# which approach
+appr = int(input("Which approach will you use? 1 or 2?\n"))
+if appr == 1:
+	M = 33 # number of features plus label for Approach 2 (23) and Approach 1 (33)
+	dataFilePath = os.path.abspath('../datasets/approach1_data')
+else:
+	M = 23  # number of features plus label for Approach 2 (23) and Approach 1 (33)
+	dataFilePath = os.path.abspath('../datasets/approach2_data')
+	print("ih")
 
-M = 23
-K = int((M-1)/2)
-X_samples_shape = (1,M-1)
-trials = 25
+K = int((M - 1) / 2)  # number of features for one player
+X_samples_shape = (1, M - 1)  # Dimension of one sample data
+
+trials = 100
 accuracy_train = 0
 accuracy_test = 0
 
-def standardize(X,y):
-	a = preprocessing.StandardScaler()
-	new = a.fit_transform(X,y)
-	return new
-
-def normalize(X,y):
-	a = preprocessing.Normalizer()
-	new = a.fit_transform(X,y)
-	return new
 
 def load_dataset():
-	data = np.loadtxt(currDir + "/datasets/approach2_data", delimiter=',')
+	data = np.loadtxt(dataFilePath, delimiter=',')
 	np.random.shuffle(data) #SHUFFLE DATA
 	train_perc = 80 #training set percent - Cross Validation
 	cross = int((data.shape[0]) * (train_perc/100))
@@ -75,15 +73,16 @@ for i in range(trials):
 		dense_num_units=54,
 		dense_nonlinearity=lasagne.nonlinearities.rectify,
 		# dropout2
-		dropout2_p=0.5,
+		dropout2_p=0.25,
 		# output
 		output_nonlinearity=lasagne.nonlinearities.softmax,
 		output_num_units=2,
 		# optimization method params
 		update=nesterov_momentum,
-		update_learning_rate=0.01,
+		update_learning_rate=0.05,
 		update_momentum=0.9,
-		max_epochs=200,
+		max_epochs=250,
+		verbose=True
 	)
 
 	print('--------- Trial #{} ------------'.format(i))

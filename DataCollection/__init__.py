@@ -1,21 +1,10 @@
 import json
 import os
 
-'''
-FAISAL MOHAMMAD
-4/25/2017
-
-data_collection - script to collection sample data one by one. Dictionary mapping containing how the user input is
-converted into meaningful feature data is via the json files located in json_dictionaries directory. This script will
-enter a data sample into all three data text files: raw_data, approach1_data, and approach2_data.
-
-'''
-# get current working directory and use path to get json data files for dictionary mappings
-
-class DataCollection:
+class dataCollection:
 	def __init__(self):
 		self.currDir = os.getcwd()
-		self.rawDict,self.apprTwoDict,self.apprOneDict = self.getDictionaryMapping()
+		self.rawDict, self.apprTwoDict, self.apprOneDict = self.getDictionaryMapping()
 		self.N = len(self.rawDict)
 
 	# Enter data
@@ -40,10 +29,10 @@ class DataCollection:
 
 		winner_str = input("Enter 1 if Player X won, or Enter 0 if Player Y won\n")
 		winner = int(winner_str)
-		return card_x,card_y,winner
+		return card_x, card_y, winner
 
 	# Get a data sample for the raw data file
-	def createRawDataSample(self,card_x, card_y, winner):
+	def createRawDataSample(self, card_x, card_y, winner):
 		rawData = [0] * 149
 		for x in card_x:
 			rawData[self.rawDict[x]] = 1
@@ -51,18 +40,21 @@ class DataCollection:
 			rawData[self.rawDict[y] + 74] = 1
 		rawData[148] = winner
 		output = str(rawData).strip('[]') + "\n"
+		return output
+
+	def writeToRawData(self, output):
 		file = open(self.currDir + "/datasets/raw_data", "a")
 		file.write(output)
 		file.close()
-		return output
+		print("Inserted to Raw Data")
 
 	# Get a data sample via Approach Two
-	def createApprTwoDataSample(self,card_x, card_y, winner):
+	def createApprTwoDataSample(self, card_x, card_y, winner):
 		apprTwoData = [0] * 23  # this is for approach2_data
 		tx, ty = 0, 0
 		for x in card_x:
 			apprTwoData[0] += self.apprTwoDict[x]['health']
-			apprTwoData[1] += self.apprTwoDict[x]['cost'] / 8
+			apprTwoData[1] += self.apprTwoDict[x]['cost'] / 8.0
 			if self.apprTwoDict[x]['type'] in {'gtroop', 'atroop', 'dbuilding', 'sbuilding'}:
 				tx += 1
 				apprTwoData[2] += self.apprTwoDict[x]['ADPS']
@@ -78,7 +70,7 @@ class DataCollection:
 
 		for y in card_y:
 			apprTwoData[11] += self.apprTwoDict[y]['health']
-			apprTwoData[12] += self.apprTwoDict[y]['cost'] / 8
+			apprTwoData[12] += self.apprTwoDict[y]['cost'] / 8.0
 			if self.apprTwoDict[y]['type'] in {'gtroop', 'atroop', 'dbuilding', 'sbuilding'}:
 				ty += 1
 				apprTwoData[13] += self.apprTwoDict[y]['ADPS']
@@ -93,17 +85,21 @@ class DataCollection:
 				apprTwoData[21] += 1
 			if self.apprTwoDict[y]['type'] in {'gtroop', 'atroop', 'dbuilding', 'sbuilding'}:
 				ty += 1
-		apprTwoData[2] = apprTwoData[2] / tx
-		apprTwoData[13] = apprTwoData[13] / tx
+		apprTwoData[2] = apprTwoData[2] / float(tx)
+		apprTwoData[13] = apprTwoData[13] / float(tx)
 		apprTwoData[22] = winner
 		output = str(apprTwoData).strip('[]') + "\n"
+		return output
+
+	# Write to approach2_data
+	def writeToApprTwoData(self, output):
 		file = open(self.currDir + "/datasets/approach2_data", "a")
 		file.write(output)
 		file.close()
-		return output
+		print("Inserted to Approach 2 Data")
 
 	# Get a data sample via Approach One
-	def createApprOneDataSample(self,card_x, card_y, winner):
+	def createApprOneDataSample(self, card_x, card_y, winner):
 		apprOneData = [0] * 33  # this is for approach1_data
 		for x in card_x:
 			for attr in self.apprOneDict[x]:
@@ -113,16 +109,23 @@ class DataCollection:
 				apprOneData[attr + 16] += 1
 		apprOneData[32] = winner
 		output = str(apprOneData).strip('[]') + "\n"
+		return output
+
+	# Write to approach1_data
+	def writeToApprOneData(self, output):
 		file = open(self.currDir + "/datasets/approach1_data", "a")
 		file.write(output)
 		file.close()
-		return output
+		print("Inserted to Approach 1 Data")
 
 	# insert data to text files!
 	def insertData(self, card_x, card_y, winner):
-		self.createRawDataSample(card_x, card_y, winner)
-		self.createApprOneDataSample(card_x, card_y, winner)
-		self.createApprTwoDataSample(card_x, card_y, winner)
+		raw = self.createRawDataSample(card_x, card_y, winner)
+		appr1 = self.createApprOneDataSample(card_x, card_y, winner)
+		appr2 = self.createApprTwoDataSample(card_x, card_y, winner)
+		self.writeToRawData(raw)
+		self.writeToApprOneData(appr1)
+		self.writeToApprTwoData(appr2)
 
 	# Pull Json dictionary mapping files
 	def getDictionaryMapping(self):
@@ -150,10 +153,6 @@ class DataCollection:
 				if (len(y) == 1):
 					Y_data.append(y[0])
 			winner = results[self.N * 2]
-			self.createApprOneDataSample(X_data,Y_data,winner)
-			self.createApprTwoDataSample(X_data,Y_data,winner)
+			self.createApprOneDataSample(X_data, Y_data, winner)
+			self.createApprTwoDataSample(X_data, Y_data, winner)
 		file.close()
-
-data_collection = DataCollection()
-card_x, card_y, winner = data_collection.collectData()
-data_collection.insertData(card_x,card_y,winner)
