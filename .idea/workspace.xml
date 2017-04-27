@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6576ad4c-a4a4-4ef8-92ef-e4763ecfb09e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/collect_data.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/data_collection_test.py" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/data_collection_scripts/data_collection.py" afterPath="$PROJECT_DIR$/DataCollection/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datasets/raw_data" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/algorithms_tests/clashNN.py" afterPath="$PROJECT_DIR$/algorithms_tests/clashNN.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/algorithms_tests/clash_RF.py" afterPath="$PROJECT_DIR$/algorithms_tests/clash_RF.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/algorithms_tests/clash_SVM.py" afterPath="$PROJECT_DIR$/algorithms_tests/clash_SVM.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/approach1_data" afterPath="$PROJECT_DIR$/datasets/approach1_data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/approach2_data" afterPath="$PROJECT_DIR$/datasets/approach2_data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/json_dictionaries/approach2_dict.json" afterPath="$PROJECT_DIR$/json_dictionaries/approach2_dict.json" />
     </list>
     <ignored path="ClashDeepNN.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,7 +37,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="clashNN.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="clashNN.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/algorithms_tests/clashNN.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="228">
@@ -67,10 +59,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="raw_data" pinned="false" current-in-tab="false">
+      <file leaf-file-name="raw_data" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/datasets/raw_data">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1155">
+            <state relative-caret-position="228">
               <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
               <folding />
             </state>
@@ -208,10 +200,10 @@
         <option value="$PROJECT_DIR$/collect_data.py" />
         <option value="$PROJECT_DIR$/datasets/approach2_data" />
         <option value="$PROJECT_DIR$/datasets/approach1_data" />
-        <option value="$PROJECT_DIR$/datasets/raw_data" />
         <option value="$PROJECT_DIR$/algorithms_tests/clash_SVM.py" />
         <option value="$PROJECT_DIR$/algorithms_tests/clash_RF.py" />
         <option value="$PROJECT_DIR$/algorithms_tests/clashNN.py" />
+        <option value="$PROJECT_DIR$/datasets/raw_data" />
       </list>
     </option>
   </component>
@@ -824,7 +816,14 @@
       <option name="project" value="LOCAL" />
       <updated>1493195689893</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="major edits">
+      <created>1493281617474</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1493281617474</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -861,14 +860,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="46" width="1280" height="709" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36796874" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3678619" sideWeight="0.503125" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5679758" sideWeight="0.496875" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5679758" sideWeight="0.496875" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.50332004" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -911,12 +910,12 @@
     <MESSAGE value="fixed data points" />
     <MESSAGE value="fixed some bugs" />
     <MESSAGE value="added couple new scripts for easy edits" />
-    <MESSAGE value="major edits" />
     <MESSAGE value="changed around folders" />
     <MESSAGE value="adding comments" />
     <MESSAGE value="cleaned data_collection.py" />
     <MESSAGE value="deleted update_data_scheme.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="deleted update_data_scheme.py" />
+    <MESSAGE value="major edits" />
+    <option name="LAST_COMMIT_MESSAGE" value="major edits" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1067,14 +1066,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/datasets/raw_data">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1155">
-          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/collect_data.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1114,6 +1105,14 @@
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datasets/raw_data">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
