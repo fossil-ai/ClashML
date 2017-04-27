@@ -67,7 +67,7 @@ Each sample vector **X** will be a (1 *x* 22) vector.
 
 **Y** = 0 (Player Y won)
 
-*data_collection_new.py* was the Python script that took input data about a battle, and then used pre-defined dictionary mappings to construct each
+*collect_data.py* was the Python script that took input data about a battle, and then used pre-defined dictionary mappings to construct each
 sample **X**. (Please look through the code for details)
 
 ## Machine Learning
@@ -76,7 +76,7 @@ Three algorithms were used to train 3 seperate models, each in their own respect
 SciPy, Theano/Lasagne were used. Cross-validation with shuffling was used in every trial, where the data matrix would be shuffled and then split usually
 80/20 for train/test.
 
-1. Simple Neurel Net
+1. Simple Neural Net
 2. Support Vector Machine
 3. Random Forest
 
@@ -85,4 +85,30 @@ estimated generalization accuracy of the model. Each hundreds of trials also inv
 Results are shown below.
 
 ## Analysis:
-[MORE TO COME :) - Collecting more samples!]
+
+For each algorithm, the data matrix was shuffled before the cross-validation splits.
+
+ **Neural Net (Theano/Lasagne) - Each CV split was averaged over 50 trials (NN on approach2_data was so terrible, I didn't bother doing an analysis on it. So this is only for approach1_data)**
+ 
+ Parameters: 
+ 
+ learning rate = 0.05, max # of epochs = 250, Layers [Input, Dense (64 units), Dropout (*p=0.25*), Output]
+
+| Cross-Validation Split (Train/Test)|   Training Accuracy         | Test Accuracy  |
+| ------------- |:-------------:| -----:|
+| 60/40         | 90.91%      | 60.45% |
+| 80/20         | 91.81% |   65.5% |
+| 95/5 | 92.86%    |    63.0% |
+
+**Support Vector Machine (scikit-learn) - Each CV split was avaeraged over 250 trials, done on both datasets. We do not particular care about the training accuracy, so we will look at only test accuracy** 
+
+Parameters:
+penalty term of error *C* = 2, kernal = RBF
+
+| Cross-Validation Split (Train/Test)|   Test Accuracy (Approach 1 Dataset)        | Test Accuracy (Approach 2 Dataset) |
+| ------------- |:-------------:| -----:|
+| 60/40         | 90.91%      | 60.45% |
+| 80/20         | 91.81% |   65.5% |
+| 95/5 | 92.86%    |    63.0% |
+
+
