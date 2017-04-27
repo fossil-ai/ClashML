@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6576ad4c-a4a4-4ef8-92ef-e4763ecfb09e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datasets/raw_data" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data_collection_test.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ClashDeepNN.iws" />
@@ -337,7 +338,7 @@
       <recent name="$PROJECT_DIR$/algorithms_tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.clashNN">
+  <component name="RunManager" selected="Python tests.Unittests in data_collection_test">
     <configuration default="false" name="clash_SVM" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -368,23 +369,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="ClashML" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithms_tests/clash_RF.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DataCollection" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="ClashML" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DataCollection/__init__.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -421,6 +405,28 @@
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithms_tests/clashNN.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittests in data_collection_test" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ClashML" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_collection_test.py" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
@@ -578,17 +584,17 @@
       <item index="0" class="java.lang.String" itemvalue="Python.data_collection_attr" />
       <item index="1" class="java.lang.String" itemvalue="Python.clash_SVM" />
       <item index="2" class="java.lang.String" itemvalue="Python.clash_RF" />
-      <item index="3" class="java.lang.String" itemvalue="Python.__init__" />
-      <item index="4" class="java.lang.String" itemvalue="Python.collect_data" />
-      <item index="5" class="java.lang.String" itemvalue="Python.clashNN" />
+      <item index="3" class="java.lang.String" itemvalue="Python.collect_data" />
+      <item index="4" class="java.lang.String" itemvalue="Python.clashNN" />
+      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittests in data_collection_test" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.clashNN" />
-        <item index="1" class="java.lang.String" itemvalue="Python.clash_RF" />
-        <item index="2" class="java.lang.String" itemvalue="Python.clash_SVM" />
-        <item index="3" class="java.lang.String" itemvalue="Python.collect_data" />
-        <item index="4" class="java.lang.String" itemvalue="Python.__init__" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in data_collection_test" />
+        <item index="1" class="java.lang.String" itemvalue="Python.clashNN" />
+        <item index="2" class="java.lang.String" itemvalue="Python.clash_RF" />
+        <item index="3" class="java.lang.String" itemvalue="Python.clash_SVM" />
+        <item index="4" class="java.lang.String" itemvalue="Python.collect_data" />
       </list>
     </recent_temporary>
   </component>
@@ -823,13 +829,17 @@
       <option name="project" value="LOCAL" />
       <updated>1493281617474</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="major edits">
+      <created>1493281722036</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1493281722036</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittest_dataCollectionTest_testApprTwoData - 2017.04.27 at 02h 11m 37s.xml">
-      <configuration name="Unittest dataCollectionTest.testApprTwoData" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittest_dataCollectionTest_testApprTwoData - 2017.04.27 at 02h 11m 43s.xml">
       <configuration name="Unittest dataCollectionTest.testApprTwoData" configurationId="tests" />
     </history-entry>
@@ -857,12 +867,15 @@
     <history-entry file="Unittests_in_data_collection_test - 2017.04.27 at 01h 55m 54s.xml">
       <configuration name="Unittests in data_collection_test" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittests_in_data_collection_test - 2017.04.27 at 04h 29m 51s.xml">
+      <configuration name="Unittests in data_collection_test" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="46" width="1280" height="709" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36796874" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36796874" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3678619" sideWeight="0.503125" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
