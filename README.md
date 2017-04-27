@@ -127,32 +127,53 @@ number of trees in forest = 15
 Interesting how the 95/5 split for Approach 2 gave 69% where it performed much lower for Approach 1. To be honest, it's hard to predict much based on only 77 samples, so I will be updating results here and there once I collect more in the future (or you can collect some as well :D ). Getting the feature importance from the RFC gave the following for the 95/5 split on Approach 2:
 
 ADPS_Y : 0.1585116432655841
+
 ADPS_X : 0.15705471661361553
+
 AIRDAMAGE_Y : 0.04008767428358454
+
 BB_Y : 0.03981336635515329
+
 AIRDAMAGE_X : 0.039719407378624456
+
 HEALTH_Y : 0.03927363435433432
+
 BUILDINGS_Y : 0.038275569313462696
+
 TRICKY_Y : 0.03679796389356237
+
 DSPELL_X : 0.03629248739955291
+
 TRICKY_X : 0.03618435955547795
+
 BUILDINGS_X : 0.03584786846806187
+
 BB_X : 0.03549451997354712
+
 SPLASH_Y : 0.03448379427572234
+
 SPLASH_X : 0.03328395369083422
+
 DSPELL_Y : 0.033145979606698045
+
 MULTI_Y : 0.03246443066060067
+
 HEALTH_X : 0.03180474329703207
+
 MULTI_X : 0.03180109137800274
+
 STUNNER_Y : 0.03125509994131526
+
 STUNNER_X : 0.03108361712571109
+
 COST_X : 0.024086202652025778
+
 COST_Y : 0.02323787651749665
 
 Whereas many of the features for player X and Y contribute roughly ~2-4% each, the ADPS_X,ADPS_Y features, which stood for Attack Damage Per Second (averaged over the deck), had a whopping combined total of ~30% importance. This should not come as a surprise, but it shows that since we do not have direct access to the average damage per second of a DECK like we do for the average cost of the deck (which happened to be the least contributing factor), that it's often overlooked by many players. 
 
 Anyhow, with only 77 samples, Random Forest performed the best, then SVM, and then NN. To be honest NN might be terrible for this case. Especially with the small amount of samples. 
 
-Remember this was BINARY CLASSIFICATION. A test accuracy of 50% would have meant this study was pointless, since 50% is random guessing. BUT, but we must remember, without observing the actual gameplay or skills of the players, we are trying to predict the winner. So even reaching 75% test accuracy would be pretty impressive for judging a winner solely on deck composition. Maybe if we had about 1000 samples, we could see some exciting patterns! Well that is all from me. I encourage those reading this to use what I have so far and tweak whatever they see fit. I'm no machine learning expert, so I'm sure there are plenty of other algorithms to try, and hyperparamters to tune! Good Luck!
+Remember this was BINARY CLASSIFICATION. A test accuracy of 50% would have meant this study was pointless, since 50% is random guessing. BUT, but we must remember, without observing the actual gameplay or skills of the players, we are trying to predict the winner. So even reaching 75% test accuracy would be pretty impressive for judging a winner solely on deck composition. Maybe if we had about 1000 samples, we could see some exciting patterns! Well that is all from me. I encourage those reading this to use what I have so far and tweak whatever they see fit. I'm no machine learning expert, so I'm sure there are plenty of other algorithms to try, and hyperparamters to tune! Maybe we need to create an Approach 3, with brand new features and add attack damage per second since it proved to be a convincing factor. Good Luck!
 
 
