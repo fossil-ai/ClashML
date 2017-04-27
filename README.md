@@ -113,7 +113,7 @@ penalty term of error *C* = 2, kernal = RBF
 
 So far for both SVM and NN, test accuracy was higher on the 80/20 split. I guess that's why it's conventional :)
 
-** Random Forest Classifier (RFC) (scikit-learn) - Each CV split per dataset was averaged over 100 trials. The RandomForestClassifier API provided a very nice feature (.feature_importances) which I assumes ranks the features we decided on in the order they contribute the most to the binary classification decision.** 
+**Random Forest Classifier (RFC) (scikit-learn) - Each CV split per dataset was averaged over 100 trials. The RandomForestClassifier API provided a very nice feature (.feature_importances) which I assumes ranks the features we decided on in the order they contribute the most to the binary classification decision.** 
 
 Parameters:
 number of trees in forest = 15 
