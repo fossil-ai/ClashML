@@ -121,12 +121,12 @@ number of trees in forest = 15
 | Cross-Validation Split (Train/Test)|  Test Accuracy (Approach 1 Dataset) | Test Accuracy (Approach 2 Dataset) |
 | :-------------: |:-------------:| :-------------:|
 | 60/40         | 66.06%      | 66.80% |
-| 80/20         | 66.50% |   `68.56%`  |
+| 80/20         | 66.50% |   `72.43%`  |
 | 95/5 | 64.25%   |   `75.25%` |
 
 Interesting how the 95/5 split for Approach 2 gave 69% where it performed much lower for Approach 1. To be honest, it's hard to predict much based on only 77 samples, so I will be updating results here and there once I collect more in the future (or you can collect some as well :D ). Getting the feature importance from the RFC gave the following for the 95/5 split on
 
-*Update:* Tweaked RFC for more trees, and was able to improve accuracy to 75% for the 95/5 split. NOT BAD! :)
+*Update:* Tweaked RFC for more trees (100 trees), and was able to improve accuracy to 75% for the 95/5 split and 72% for 80/20. NOT BAD! :)
 
 Approach 2:
 
