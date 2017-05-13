@@ -122,9 +122,13 @@ number of trees in forest = 15
 | :-------------: |:-------------:| :-------------:|
 | 60/40         | 66.06%      | 66.80% |
 | 80/20         | 66.50% |   `68.56%`  |
-| 95/5 | 64.25%   |   `69.00%` |
+| 95/5 | 64.25%   |   `75.25%` |
 
-Interesting how the 95/5 split for Approach 2 gave 69% where it performed much lower for Approach 1. To be honest, it's hard to predict much based on only 77 samples, so I will be updating results here and there once I collect more in the future (or you can collect some as well :D ). Getting the feature importance from the RFC gave the following for the 95/5 split on Approach 2:
+Interesting how the 95/5 split for Approach 2 gave 69% where it performed much lower for Approach 1. To be honest, it's hard to predict much based on only 77 samples, so I will be updating results here and there once I collect more in the future (or you can collect some as well :D ). Getting the feature importance from the RFC gave the following for the 95/5 split on
+
+*Update:* Tweaked RFC for more trees, and was able to improve accuracy to 75% for the 95/5 split. NOT BAD! :)
+
+Approach 2:
 
 ADPS_Y : 0.1585116432655841
 
