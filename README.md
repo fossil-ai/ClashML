@@ -1,6 +1,6 @@
 # Strategy Analysis of Clash Royale - A Supervised Learning Approach
 
-![Alt text](https://user-images.githubusercontent.com/13232148/51010216-2a976f80-1508-11e9-8525-278c56e62024.png)
+![Alt text](https://cloud.githubusercontent.com/assets/13232148/25375697/9137fcfe-296f-11e7-9778-6ab978515fb5.jpg)
 
 Supercell's Clash Royale is a free mobile strategy game on various platforms mainly iOS/Android. The game takes an unconventional approach using 
 card game concepts. Players collect and upgrade cards to use them for battle. Each deck may consist of 8 cards of the player's choosing. Once the battle begins
